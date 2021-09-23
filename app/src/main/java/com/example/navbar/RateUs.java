@@ -20,34 +20,34 @@ public class RateUs extends AppCompatActivity {
 
     public void ClickMenu(View view){
         //open drawer
-        MainActivity.openDrawer(drawerLayout);
+        Dashboard.openDrawer(drawerLayout);
     }
 
     public void ClickLogo(View view){
         //close drawer
-        MainActivity.closeDrawer(drawerLayout);
+        Dashboard.closeDrawer(drawerLayout);
     }
 
     public void ClickProfile(View view){
-        MainActivity.redirectActivity(this,Profile.class);
+        Dashboard.redirectActivity(this,Profile.class);
     }
 
     public void ClickDashboard(View view){
-        MainActivity.redirectActivity(this,MainActivity.class);
+        Dashboard.redirectActivity(this,MainActivity.class);
     }
 
     public void ClickStore(View view){
 
-        MainActivity.redirectActivity(this,Store.class);
+        Dashboard.redirectActivity(this,Store.class);
     }
 
     public void ClickService(View view){
 
-        MainActivity.redirectActivity(this,Service.class);
+        Dashboard.redirectActivity(this,Service.class);
     }
 
     public void ClickAboutUs(View view){
-        MainActivity.redirectActivity(this,AboutUs.class);
+        Dashboard.redirectActivity(this,AboutUs.class);
     }
 
     public void ClickRateUs(View view){
@@ -57,6 +57,6 @@ public class RateUs extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        MainActivity.closeDrawer(drawerLayout);
+        Dashboard.closeDrawer(drawerLayout);
     }
 }

@@ -7,6 +7,9 @@
     android:id="@+id/drawer_layout"
     tools:context=".Service">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -17,13 +20,147 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Service"
-            android:textSize="50sp"
+            android:layout_height="wrap_content"
+            android:text="Booking Service"
+            android:textSize="30sp"
             android:textStyle="bold"
-            android:gravity="center"/>
+            android:paddingLeft="105dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginLeft="13dp"
+            android:layout_height="130dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/black">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Safety Service"
+                android:textStyle="bold"
+                android:textSize="25dp"
+                android:paddingLeft="12dp"/>
+
+            <TextView
+                android:layout_width="290sp"
+                android:layout_height="wrap_content"
+                android:text="Running low on cash and the vehicle mileage is less than 15,000km customer can go for safety service"
+                android:paddingTop="35dp"
+                android:paddingLeft="18dp"
+                android:textSize="18dp"
+                android:textColor="@color/black"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/car"
+                android:paddingLeft="270dp"
+                android:layout_marginTop="50dp"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginLeft="13dp"
+            android:layout_height="130dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/black">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Major Service"
+                android:textStyle="bold"
+                android:textSize="25dp"
+                android:paddingLeft="12dp"/>
+
+            <TextView
+                android:layout_width="290sp"
+                android:layout_height="wrap_content"
+                android:text="Will cost a little bit more than safety service and mileage should be 30,000km"
+                android:paddingTop="35dp"
+                android:paddingLeft="18dp"
+                android:textSize="18dp"
+                android:textColor="@color/black"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/car"
+                android:paddingLeft="270dp"
+                android:layout_marginTop="50dp"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginLeft="13dp"
+            android:layout_height="130dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/black">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Premium Service"
+                android:textStyle="bold"
+                android:textSize="25dp"
+                android:paddingLeft="12dp"/>
+
+            <TextView
+                android:layout_width="290sp"
+                android:layout_height="wrap_content"
+                android:text="Even better than the major service and cost also little bit higher than the major service and mileage should be 45,000km"
+                android:paddingTop="33dp"
+                android:paddingLeft="18dp"
+                android:textSize="18dp"
+                android:textColor="@color/black"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/car"
+                android:paddingLeft="270dp"
+                android:layout_marginTop="50dp"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginLeft="13dp"
+            android:layout_height="130dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/black">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ultimate Service"
+                android:textStyle="bold"
+                android:textSize="25dp"
+                android:paddingLeft="12dp"/>
+
+            <TextView
+                android:layout_width="290sp"
+                android:layout_height="wrap_content"
+                android:text="Even better than the premium service and cost also little bit higher than the premium service and mileage should be at least 60,000km"
+                android:paddingTop="35dp"
+                android:paddingLeft="18dp"
+                android:textSize="18dp"
+                android:textColor="@color/black"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/car"
+                android:paddingLeft="270dp"
+                android:layout_marginTop="50dp"/>
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/booking_button"
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Book A Service"/>
+
 
     </LinearLayout>
+    </ScrollView>
 
     <RelativeLayout
         android:layout_width="300dp"
