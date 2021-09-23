@@ -7,17 +7,25 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+
 
         <Button
             android:id="@+id/dashboard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="600dp"
-            android:text="Dashboard" />
-    </LinearLayout>
+            android:text="Dashboard"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/adminlogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="admin login"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dashboard" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
