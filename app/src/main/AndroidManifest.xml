@@ -13,6 +13,7 @@
         <activity android:name=".admin.HomeActivity" />
         <activity android:name=".admin.admin_login" />
         <activity android:name=".admin.RegisterActivity" />
+        <activity android:name=".admin.forgrt_password" />
         <activity
             android:name=".AddService"
             android:label="Add Service"
@@ -42,6 +43,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".admin.forgrt_password" />
     </application>
 
 </manifest>
