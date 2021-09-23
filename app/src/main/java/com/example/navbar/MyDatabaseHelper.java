@@ -2,6 +2,7 @@ package com.example.navbar;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
@@ -65,5 +66,36 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         }else {
             Toast.makeText(context,"Added Successfully",Toast.LENGTH_SHORT).show();
         }
+    }
+
+    Cursor readAllData(){
+        String query = "SELECT * FROM " + TABLE_NAME;
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = null;
+        if(db != null){
+            cursor = db.rawQuery(query,null);
+        }
+        return cursor;
+    }
+
+    void updateService(String id,String nic,String name,String number,String type,String date,String time){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cc = new ContentValues();
+
+        cc.put(COLUMN_NIC,nic);
+        cc.put(COLUMN_NAME,name);
+        cc.put(COLUMN_NUMBER,number);
+        cc.put(COLUMN_TYPE,type);
+        cc.put(COLUMN_DATE,date);
+        cc.put(COLUMN_TIME,time);
+
+        long result = db.update(TABLE_NAME,cc,  "_id=?",new String[]{id});
+        if(result == -1){
+            Toast.makeText(context,"Failed To Update",Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(context,"Successfully Updated",Toast.LENGTH_SHORT).show();
+        }
+
     }
 }
