@@ -9,11 +9,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NavBar">
-        <activity android:name=".Store"></activity>
-        <activity android:name=".Service" />
-        <activity android:name=".RateUs" />
-        <activity android:name=".AboutUs" />
-        <activity android:name=".Profile" />
+        <activity android:name=".Dashboard"></activity>
+        <activity
+            android:name=".AddService"
+            android:label="Add Service"
+            android:parentActivityName=".ServiceList" />
+        <activity
+            android:name=".ServiceList"
+            android:label="Service List" />
+        <activity
+            android:name=".Store"
+            android:label="Store" />
+        <activity
+            android:name=".Service"
+            android:label="Service" />
+        <activity
+            android:name=".RateUs"
+            android:label="Rate Us" />
+        <activity
+            android:name=".AboutUs"
+            android:label="About Us" />
+        <activity
+            android:name=".Profile"
+            android:label="Profile" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -2,28 +2,32 @@ package com.example.navbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Service extends AppCompatActivity {
+public class ServiceList extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
+    RecyclerView recyclerView;
     Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_service);
+        setContentView(R.layout.activity_service_list);
 
         drawerLayout = findViewById(R.id.drawer_layout);
-        button = findViewById(R.id.booking_button);
+        recyclerView = findViewById(R.id.recyclerView);
+        button = findViewById(R.id.add_button);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Service.this,ServiceList.class);
+                Intent intent = new Intent(ServiceList.this,AddService.class);
                 startActivity(intent);
             }
         });
