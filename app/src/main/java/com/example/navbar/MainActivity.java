@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     //initialize variables
 //    DrawerLayout drawerLayout;
-    Button button;
+    Button button,adminlogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +22,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         button = findViewById(R.id.dashboard);
+        adminlogin=findViewById(R.id.adminlogin);
+
         button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,Dashboard.class);
+                startActivity(intent);
+            }
+        });
+
+
+        adminlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,Dashboard.class);
