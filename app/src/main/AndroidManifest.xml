@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NavBar">
-        <activity android:name=".Dashboard"></activity>
+        <activity android:name=".Dashboard" />
+        <activity android:name=".admin.HomeActivity" />
+        <activity android:name=".admin.admin_login" />
+        <activity android:name=".admin.RegisterActivity" />
         <activity
             android:name=".AddService"
             android:label="Add Service"
