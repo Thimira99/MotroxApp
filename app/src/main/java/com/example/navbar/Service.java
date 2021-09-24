@@ -44,7 +44,7 @@ public class Service extends AppCompatActivity {
     }
 
     public void ClickDashboard(View view){
-        Dashboard.redirectActivity(this,MainActivity.class);
+        Dashboard.redirectActivity(this,Dashboard.class);
     }
 
     public void ClickStore(View view){
