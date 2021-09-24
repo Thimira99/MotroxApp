@@ -53,7 +53,7 @@ public class admin_login extends AppCompatActivity {
 
                 if (res == true) {
                     Toast.makeText(admin_login.this, "truuuuuuuuuuuuu", Toast.LENGTH_LONG).show();
-                    Intent HomePage = new Intent(admin_login.this, forgrt_password.class);
+                    Intent HomePage = new Intent(admin_login.this, forget_password_new.class);
                     Bundle b = new Bundle();
                     b.putString("textViewEmail", editTextEmail.getText().toString());
                     b.putString("textViewPassword", editTextPassword.getText().toString());
@@ -68,7 +68,7 @@ public class admin_login extends AppCompatActivity {
                     HomePage.putExtras(b);
                     startActivity(HomePage);
                 } else {
-                    Toast.makeText(admin_login.this, "Login Error", Toast.LENGTH_LONG).show();
+                    Toast.makeText(admin_login.this, "User Email Not Found", Toast.LENGTH_LONG).show();
                 }
             }
         });

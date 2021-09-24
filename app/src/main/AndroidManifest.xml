@@ -20,6 +20,10 @@
 
         <activity android:name=".admin.forgrt_password" />
 
+        <activity android:name=".admin.send_email" />
+        <activity android:name=".admin.forget_password_new" />
+
+
 
         <activity
             android:name=".AddService"
