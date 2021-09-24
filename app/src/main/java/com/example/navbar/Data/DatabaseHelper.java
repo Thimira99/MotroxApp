@@ -102,6 +102,73 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return false;
     }
 
+    //forget password
+    public Boolean forgetcheckUser(String email) {
+        String[] columns = {Constants.KEY_ID};
+
+        SQLiteDatabase db = getReadableDatabase();
+
+        String selection = Constants.KEY_EMAIL + "=?" ;
+
+        String[] selectionArgs = {email};
+
+        Cursor cursor = db.query(Constants.TABLE_NAME, columns, selection, selectionArgs, null, null, null);
+        int count = cursor.getCount();
+        cursor.close();
+        db.close();
+
+        if (count > 0)
+            return true;
+        else
+            return false;
+    }
+
+    //forget password 2
+    public String forgetselectOneUserSendUserName(String email) {
+        SQLiteDatabase db = getReadableDatabase();
+
+        Cursor c = db.rawQuery("SELECT * FROM " + Constants.TABLE_NAME + " WHERE " + Constants.KEY_EMAIL + " = '"+email.trim()+"'", null);
+        c.moveToFirst();
+
+        int x = 0 ;
+        String y = "";
+        while (c != null) {
+            x = Integer.parseInt(c.getString(c.getColumnIndex(Constants.KEY_ID)));
+            y = c.getString(c.getColumnIndex(Constants.KEY_USERNAME));
+            Log.d("tagOneUser", Integer.toString(x) );
+            Log.d("tagOneUser", y );
+            break;
+        }
+        c.moveToNext();
+        return y;
+    }
+
+
+    //forget password 3
+    public int forgetselectOneUserSendId(String email) {
+        SQLiteDatabase db = getReadableDatabase();
+
+        Cursor c = db.rawQuery("SELECT * FROM " + Constants.TABLE_NAME + " WHERE " + Constants.KEY_EMAIL + " = '"+email.trim()+"'" , null);
+        c.moveToFirst();
+
+        int x = 0 ;
+        String y = "";
+        while (c != null) {
+            x = Integer.parseInt(c.getString(c.getColumnIndex(Constants.KEY_ID)));
+            y = c.getString(c.getColumnIndex(Constants.KEY_USERNAME));
+            Log.d("tagOneUser", Integer.toString(x) );
+            Log.d("tagOneUser", y );
+            break;
+        }
+        c.moveToNext();
+        return x;
+    }
+
+
+
+
+
+
 
     // not clean code
     public String selectOneUserSendUserName(String email, String password) {

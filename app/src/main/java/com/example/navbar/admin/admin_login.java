@@ -26,7 +26,7 @@ public class admin_login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.admin_login);
 
         db = new DatabaseHelper(this);
         editTextEmail = findViewById(R.id.editTextEmail);
@@ -42,8 +42,34 @@ public class admin_login extends AppCompatActivity {
         textforgetpassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(admin_login.this, RegisterActivity.class));
-                String password = editTextEmail.getText().toString().trim();
+                String email = editTextEmail.getText().toString().trim();
+                String password = editTextPassword.getText().toString().trim();
+
+
+                Boolean res = db.forgetcheckUser(email);
+                User user = new User();
+                Log.d("IDdetails", String.valueOf(user.getId()));
+
+
+                if (res == true) {
+                    Toast.makeText(admin_login.this, "truuuuuuuuuuuuu", Toast.LENGTH_LONG).show();
+                    Intent HomePage = new Intent(admin_login.this, forgrt_password.class);
+                    Bundle b = new Bundle();
+                    b.putString("textViewEmail", editTextEmail.getText().toString());
+                    b.putString("textViewPassword", editTextPassword.getText().toString());
+
+                    String y = db.forgetselectOneUserSendUserName(email);
+                    int x = db.forgetselectOneUserSendId(email);
+                    Log.d("TAG" , "ID =  " + x);
+
+                    b.putString("textViewUsername",y);
+                    b.putString("textViewId", String.valueOf(x));
+
+                    HomePage.putExtras(b);
+                    startActivity(HomePage);
+                } else {
+                    Toast.makeText(admin_login.this, "Login Error", Toast.LENGTH_LONG).show();
+                }
             }
         });
 

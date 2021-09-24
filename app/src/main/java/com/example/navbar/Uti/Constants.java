@@ -11,4 +11,5 @@ public class Constants {
     public static final String KEY_USERNAME = "userName";
     public static final String KEY_PASSWORD = "password";
     public static final String KEY_EMAIL = "email";
+
 }
