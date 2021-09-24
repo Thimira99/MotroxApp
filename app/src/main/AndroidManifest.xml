@@ -10,7 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NavBar">
 
+        <activity android:name=".CalculateMileage"></activity>
+        <activity android:name=".UpdateService" />
+
+
         <activity android:name=".UpdateService"></activity>
+
         <activity android:name=".Dashboard" />
 
         <activity android:name=".Dashboard" />
