@@ -1,7 +1,10 @@
 package com.example.navbar;
 
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,7 +14,7 @@ import android.widget.Toast;
 public class UpdateService extends AppCompatActivity {
 
     EditText Owner_nic_input,Owner_name_input,Vehicle_number_input,Service_type_input,Date_input,Time_input;
-    Button update_service;
+    Button update_service,delete_service;
 
     String id,owner_nic,owner_name,vehicle_number,service_type,date,time;
 
@@ -28,6 +31,7 @@ public class UpdateService extends AppCompatActivity {
         Time_input = findViewById(R.id.Time_input2);
 
         update_service = findViewById(R.id.update_service);
+        delete_service = findViewById(R.id.delete_service);
 
         getAndSetIntentData();
 
@@ -42,6 +46,13 @@ public class UpdateService extends AppCompatActivity {
                 date = Date_input.getText().toString().trim();
                 time = Time_input.getText().toString().trim();
                 db.updateService(id,owner_nic,owner_name,vehicle_number,service_type,date,time);
+            }
+        });
+
+        delete_service.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                confirmDialog();
             }
         });
 
@@ -77,6 +88,27 @@ public class UpdateService extends AppCompatActivity {
         }
     }
 
+    void confirmDialog(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Delete " + owner_name + " ?");
+        builder.setMessage("Are you sure you want to delete " + owner_name + " ?");
+
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                MyDatabaseHelper myDB = new MyDatabaseHelper(UpdateService.this);
+                myDB.deleteRow(id);
+                finish();
+            }
+        });
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        builder.create().show();
+    }
 
 
 }
