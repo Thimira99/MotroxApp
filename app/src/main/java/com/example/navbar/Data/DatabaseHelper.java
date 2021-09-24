@@ -134,7 +134,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String y = "";
         while (c != null) {
             x = Integer.parseInt(c.getString(c.getColumnIndex(Constants.KEY_ID)));
-            y = c.getString(c.getColumnIndex(Constants.KEY_USERNAME));
+            y = c.getString(c.getColumnIndex(Constants.KEY_PASSWORD));
             Log.d("tagOneUser", Integer.toString(x) );
             Log.d("tagOneUser", y );
             break;
@@ -155,7 +155,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String y = "";
         while (c != null) {
             x = Integer.parseInt(c.getString(c.getColumnIndex(Constants.KEY_ID)));
-            y = c.getString(c.getColumnIndex(Constants.KEY_USERNAME));
+            y = c.getString(c.getColumnIndex(Constants.KEY_PASSWORD));
             Log.d("tagOneUser", Integer.toString(x) );
             Log.d("tagOneUser", y );
             break;

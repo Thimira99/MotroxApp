@@ -21,7 +21,7 @@ import com.google.android.material.snackbar.Snackbar;
 public class forgrt_password extends AppCompatActivity {
     TextView textViewUserName, textViewName, textViewPassword, textViewEmail, textViewLogout;
 
-    Button btnEditDetails, btnChangePassword;
+    Button btnEditDetails, btnChangePassword,emailbtn;
 
     private AlertDialog.Builder alertDialogBuilder;
     private AlertDialog dialog;
@@ -32,6 +32,7 @@ public class forgrt_password extends AppCompatActivity {
     String textViewEmailString;
     String textViewPasswordString;
     int textViewID;
+    String edit_email;
 
 
     @Override
@@ -43,6 +44,8 @@ public class forgrt_password extends AppCompatActivity {
         textViewPassword = findViewById(R.id.textViewPassword);
         textViewEmail = findViewById(R.id.textViewEmail);
         textViewLogout = findViewById(R.id.textViewLogout);
+
+        emailbtn = findViewById(R.id.email_btn);
 
         final Bundle b = getIntent().getExtras();
 
@@ -64,6 +67,16 @@ public class forgrt_password extends AppCompatActivity {
         textViewName.setText(textViewNameString);
         textViewPassword.setText(textViewPasswordString);
         textViewEmail.setText(textViewEmailString);
+
+        emailbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                senEmail();
+            }
+        });
+
+
+
 
         textViewLogout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,6 +100,22 @@ public class forgrt_password extends AppCompatActivity {
                 changePassword();
             }
         });
+    }
+
+    private void senEmail() {
+        String mEmail = textViewEmail.getText().toString();
+        String mSubject = "Your pasword is ";
+        String mMessage = textViewName.getText().toString();
+        Toast.makeText(forgrt_password.this, mEmail, Toast.LENGTH_SHORT).show();
+
+        JavaMailAPI javaMailAPI = new JavaMailAPI(this, mEmail, mSubject + "'" + mMessage + "'","MOTOROX Automobiles\n" +
+                "No. 53/17, C.T.B. Tourist Depot Rd,\n" +
+                "Katubedda,\n" +
+                "Moratuwa.\n" +
+                "Tel : 0773-147488, 2632865\n" +
+                "Fax : 2622444\n\n\n" + "This is a confirmation that the password for your  account is " + "'" +mMessage + "'" );
+
+        javaMailAPI.execute();
     }
 
     public void changePassword() {
@@ -171,20 +200,26 @@ public class forgrt_password extends AppCompatActivity {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 user.setUserName(editTextUsername.getText().toString());
                 user.setEmail(editTextEmail.getText().toString());
 
-                if (!editTextUsername.getText().toString().isEmpty()
-                        && !editTextEmail.getText().toString().isEmpty()) {
-                    db.updateUser(user);
-                    Snackbar.make(v, "Details Saved!", Snackbar.LENGTH_LONG).show();
-                    startActivity(new Intent(forgrt_password.this, admin_login.class));
-                } else {
-                    Snackbar.make(view, "Don't save ", Snackbar.LENGTH_LONG).show();
-                }
+                edit_email = (editTextEmail.getText().toString());
+
+                String mSubject = "new pasword is";
+                String mMessage = "qwerty";
+
+
+
+
+
+
                 dialog.dismiss();
 
             }
         });
+
+
     }
+
 }
