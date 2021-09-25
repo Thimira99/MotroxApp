@@ -6,6 +6,7 @@ import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -19,7 +20,8 @@ public class admin_nav_HomeNew extends AppCompatActivity implements View.OnClick
     public CardView c1, c2, c3, c4;
     TextView textViewUserName;
 
-    String textViewUsernameString;
+    String textViewUsernameString,textViewNameString,textViewEmailString,textViewPasswordString;
+    int textViewID;
 
 
 
@@ -29,12 +31,29 @@ public class admin_nav_HomeNew extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.admin_nav_home_new);
 
+        final Bundle b = getIntent().getExtras();
+
+
+
+        textViewID = Integer.parseInt(b.getString("textViewId"));
+        textViewUsernameString = b.getString("textViewUsername");
+        textViewNameString = b.getString("textViewUsername");
+        textViewEmailString = b.getString("textViewEmail");
+        textViewPasswordString = b.getString("textViewPassword");
+
+
+        Log.d("Data", String.valueOf(textViewID));
+        Log.d("Data", "User name: " + textViewUsernameString);
+        Log.d("Data", "name: " + textViewNameString);
+        Log.d("Data", "Email: " + textViewEmailString);
+        Log.d("Data", "password: " + textViewPasswordString);
+
 
 
 
     textViewUserName = findViewById(R.id.textViewUserName);
 
-    textViewUserName.setText("Hello   \n\nWhat service would you like to do today?");
+    textViewUserName.setText("Hello "  +textViewUsernameString+"," +"\n\nWhat service would you like to do today?");
 
 
 
@@ -59,19 +78,34 @@ public class admin_nav_HomeNew extends AppCompatActivity implements View.OnClick
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Intent i;
                 switch (item.getItemId()) {
                     case R.id.dashbaord:
-                        startActivity(new Intent(getApplicationContext()
-                                , admin_nav_dashboard.class));
+                        i = (new Intent(getApplicationContext() , admin_nav_dashboard.class));
+                        Bundle b = new Bundle();
+                        b.putString("textViewEmail", textViewEmailString);
+                        b.putString("textViewPassword",  textViewPasswordString);
+                        b.putString("textViewUsername", textViewNameString);
+                        b.putString("textViewId", String.valueOf( textViewID ));
+                        i.putExtras(b);
+
+                        startActivity(i);
+
+
                         overridePendingTransition(0, 0);
                         return true;
                     case R.id.home:
                         return true;
                     case R.id.about:
-                        startActivity(new Intent(getApplicationContext()
-                                , admin_nav_about.class));
-                        overridePendingTransition(0, 0);
-                        return true;
+                        i = (new Intent(getApplicationContext() , admin_nav_about.class));
+                        Bundle b2 = new Bundle();
+                        b2.putString("textViewEmail", textViewEmailString);
+                        b2.putString("textViewPassword",  textViewPasswordString);
+                        b2.putString("textViewUsername", textViewNameString);
+                        b2.putString("textViewId", String.valueOf( textViewID ));
+                        i.putExtras(b2);
+
+                        startActivity(i);
                 }
                 return false;
             }
@@ -89,7 +123,7 @@ public class admin_nav_HomeNew extends AppCompatActivity implements View.OnClick
         Intent i;
         switch(v.getId()){
             case R.id.ITEM_MASK:
-                i = new Intent(this,admin_nav_about.class);
+                i = new Intent(this,Iten_Mask.class);
                 startActivity(i);
                 break;
 
@@ -105,6 +139,13 @@ public class admin_nav_HomeNew extends AppCompatActivity implements View.OnClick
 
             case R.id.profile:
                 i = new Intent(this,HomeActivity.class);
+                Bundle b = new Bundle();
+                b.putString("textViewEmail", textViewEmailString);
+                b.putString("textViewPassword",  textViewPasswordString);
+                b.putString("textViewUsername", textViewNameString);
+                b.putString("textViewId", String.valueOf( textViewID ));
+                i.putExtras(b);
+
                 startActivity(i);
                 break;
 
