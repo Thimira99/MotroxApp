@@ -4,7 +4,7 @@
 
     <item
         android:id="@+id/dashbaord"
-        android:title="Dashboard"
+        android:title="ItemMask"
         android:icon="@drawable/ic_dashboard"/>
 
     <item
