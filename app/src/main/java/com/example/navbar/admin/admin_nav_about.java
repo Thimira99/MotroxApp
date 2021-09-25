@@ -63,7 +63,7 @@ public class admin_nav_about extends AppCompatActivity {
                 Intent i;
                 switch (item.getItemId()){
                     case R.id.dashbaord:
-                        i = (new Intent(getApplicationContext() , admin_nav_dashboard.class));
+                        i = (new Intent(getApplicationContext() , Iten_Mask.class));
                         Bundle b = new Bundle();
                         b.putString("textViewEmail", textViewEmailString);
                         b.putString("textViewPassword",  textViewPasswordString);
@@ -86,6 +86,7 @@ public class admin_nav_about extends AppCompatActivity {
                         i.putExtras(b2);
 
                         startActivity(i);
+                        overridePendingTransition(0, 0);
                         return true;
                     case R.id.about:
 

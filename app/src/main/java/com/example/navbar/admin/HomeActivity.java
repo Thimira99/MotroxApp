@@ -115,7 +115,7 @@ public class HomeActivity extends AppCompatActivity {
                 Intent i;
                 switch (item.getItemId()){
                     case R.id.dashbaord:
-                        i = (new Intent(getApplicationContext() , admin_nav_dashboard.class));
+                        i = (new Intent(getApplicationContext() , Iten_Mask.class));
                         Bundle b = new Bundle();
                         b.putString("textViewEmail", textViewEmailString);
                         b.putString("textViewPassword",  textViewPasswordString);

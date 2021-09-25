@@ -81,7 +81,7 @@ public class admin_nav_HomeNew extends AppCompatActivity implements View.OnClick
                 Intent i;
                 switch (item.getItemId()) {
                     case R.id.dashbaord:
-                        i = (new Intent(getApplicationContext() , admin_nav_dashboard.class));
+                        i = (new Intent(getApplicationContext() , Iten_Mask.class));
                         Bundle b = new Bundle();
                         b.putString("textViewEmail", textViewEmailString);
                         b.putString("textViewPassword",  textViewPasswordString);
@@ -106,6 +106,7 @@ public class admin_nav_HomeNew extends AppCompatActivity implements View.OnClick
                         i.putExtras(b2);
 
                         startActivity(i);
+                        overridePendingTransition(0, 0);
                 }
                 return false;
             }
@@ -124,11 +125,17 @@ public class admin_nav_HomeNew extends AppCompatActivity implements View.OnClick
         switch(v.getId()){
             case R.id.ITEM_MASK:
                 i = new Intent(this,Iten_Mask.class);
+                Bundle b1 = new Bundle();
+                b1.putString("textViewEmail", textViewEmailString);
+                b1.putString("textViewPassword",  textViewPasswordString);
+                b1.putString("textViewUsername", textViewNameString);
+                b1.putString("textViewId", String.valueOf( textViewID ));
+                i.putExtras(b1);
                 startActivity(i);
                 break;
 
             case R.id.recovery:
-                i = new Intent(this,admin_nav_dashboard.class);
+                i = new Intent(this,Iten_Mask.class);
                 startActivity(i);
                 break;
 
