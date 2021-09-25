@@ -1,52 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
+    android:background="#DDE3E5EF"
+
+
     tools:context=".admin.HomeActivity">
-
-    <TextView
-        android:id="@+id/textViewUserName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="welcome_user"
-        android:textColor="#123456"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textViewLogout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Logout"
-        android:textColor="#FA0404"
-        android:textSize="26sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView5"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="60dp"
-        android:text="Details"
+        android:layout_marginTop="23dp"
+        android:text="Edit Profile"
         android:textColor="#000"
-        android:textSize="24sp"
+        android:textSize="18sp"
+
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="104dp"
+        android:layout_below="@+id/textView3"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -70,44 +54,26 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="20dp"
                         android:text="User Name: "
-                        android:textColor="#000"
-                        android:textSize="16sp" />
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
 
-                    <TextView
-                        android:id="@+id/textViewName"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:text="name"
-                        android:textSize="23sp"
-                        android:textStyle="italic" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Email:            "
-                        android:textColor="#000"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:id="@+id/textViewEmail"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:text="Email"
                         android:textSize="12sp"
-                        android:textStyle="italic" />
+                        android:textColor="@android:color/tertiary_text_light"/>
 
                 </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textViewName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+
+                    android:layout_marginLeft="15dp"
+                    android:text="name"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -118,43 +84,82 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="password:    "
-                        android:textColor="#000"
-                        android:textSize="16sp" />
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_marginLeft="15dp"
+                        android:text="Email: "
 
-                    <TextView
-                        android:id="@+id/textViewPassword"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:text="password"
-                        android:textSize="23sp"
-                        android:textStyle="italic" />
+                        android:textSize="12sp"
+                        android:textColor="@android:color/tertiary_text_light"/>
 
                 </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textViewEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="29dp"
+                    android:layout_marginLeft="15dp"
+                    android:text="Email"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="60dp">
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal">
 
-                    <Button
-                        android:id="@+id/btnEditDetails"
-                        style="?android:attr/borderlessButtonStyle"
+                    <TextView
                         android:layout_width="wrap_content"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginRight="16dp"
-                        android:text="Edit"
-                        android:textColor="#FFAB40" />
+                        android:layout_marginLeft="15dp"
+                        android:text="Password: "
+                        android:textColor="@android:color/tertiary_text_light"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textViewPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="password"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="5dp">
+
 
                     <Button
                         android:id="@+id/btnChangePassword"
-                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Change password"
-                        android:textColor="#FFAB40" />
+                        android:layout_marginLeft="50dp"
+                        android:text="Password"
+                        android:textColor="#0E0101"
+                        app:backgroundTint="#EDB81A" />
+
+
+                    <Button
+                        android:id="@+id/btnEditDetails"
+
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25dp"
+                        android:text="username"
+                        android:textColor="#000000"
+                        app:backgroundTint="#EDB81A" />
+
+
                 </LinearLayout>
 
 
@@ -165,4 +170,59 @@
 
 
     </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:itemBackground="@color/purple_700"
+        app:itemIconTint="@drawable/selector"
+        app:itemTextColor="@drawable/selector"
+        app:menu="@menu/menue_navigation" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="226dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+
+
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="174dp"
+        android:layout_marginRight="174dp"
+        app:srcCompat="@drawable/motorox_trans" />
+
+    <TextView
+        android:id="@+id/textViewUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout2"
+        android:layout_alignBottom="@+id/linearLayout2"
+        android:layout_marginTop="135dp"
+
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textViewLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imageView5"
+
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="315dp"
+        android:layout_marginLeft="315dp"
+        android:layout_marginTop="0dp"
+        android:shadowColor="#BD3F3F"
+        android:text="Log Out"
+        android:textColor="#B30000"
+        android:textColorHint="#A63030"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+</RelativeLayout>
