@@ -12,6 +12,7 @@ public class Service extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
     Button button;
+    Button calculate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,10 +21,19 @@ public class Service extends AppCompatActivity {
 
         drawerLayout = findViewById(R.id.drawer_layout);
         button = findViewById(R.id.booking_button);
+        calculate = findViewById(R.id.calculate_button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Service.this,ServiceList.class);
+                startActivity(intent);
+            }
+        });
+
+        calculate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Service.this,CalculateMileage.class);
                 startActivity(intent);
             }
         });
@@ -44,7 +54,7 @@ public class Service extends AppCompatActivity {
     }
 
     public void ClickDashboard(View view){
-        Dashboard.redirectActivity(this,MainActivity.class);
+        Dashboard.redirectActivity(this,Dashboard.class);
     }
 
     public void ClickStore(View view){

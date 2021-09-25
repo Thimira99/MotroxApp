@@ -7,24 +7,35 @@
     android:layout_height="match_parent"
     android:id="@+id/drawer_layout"
     tools:context=".Store">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <include
-            layout="@layout/activity_toolbar"/>
+        <include layout="@layout/activity_toolbar" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Store"
-            android:textSize="50sp"
-            android:textStyle="bold"
-            android:gravity="center"/>
+        <Button
+            android:id="@+id/order_Button"
+            android:layout_width="154dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="100dp"
+            android:text="Order" />
+
+        <Button
+            android:id="@+id/addCartButton"
+            android:layout_width="162dp"
+            android:layout_height="wrap_content"
+            android:text="Add to Cart" />
 
     </LinearLayout>
+</ScrollView>
+
 
     <RelativeLayout
         android:layout_width="300dp"
@@ -32,9 +43,11 @@
         android:layout_gravity="start"
         android:background="@android:color/white">
 
-        <include
-            layout="@layout/activity_navbar"/>
+        <include layout="@layout/activity_navbar" />
+
+
 
     </RelativeLayout>
+
 
 </androidx.drawerlayout.widget.DrawerLayout>
