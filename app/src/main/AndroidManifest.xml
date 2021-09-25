@@ -11,12 +11,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NavBar">
         <activity
+
+            android:name=".admin.admin_nav_HomeNew"
+            android:exported="true" />
+        <activity
+            android:name=".admin.admin_nav_dashboard"
+            android:exported="true" />
+        <activity
+            android:name=".admin.admin_nav_about"
+            android:exported="true" />
+
             android:name=".order"
             android:exported="true" />
         <activity android:name=".CalculateMileage" />
         <activity android:name=".UpdateService" />
         <activity android:name=".UpdateService" />
         <activity android:name=".Dashboard" />
+ master
         <activity android:name=".Dashboard" />
         <activity android:name=".admin.HomeActivity" />
         <activity android:name=".admin.admin_login" />
