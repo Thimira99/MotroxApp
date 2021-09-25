@@ -7,7 +7,14 @@
         <entry key="app/src/main/res/drawable/button.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/edit_text_bottom.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/edit_text_top.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/home.xml" value="0.3638888888888889" />
+        <entry key="app/src/main/res/drawable/ic_home.xml" value="0.2851851851851852" />
+        <entry key="app/src/main/res/drawable/menue_navigation.xml" value="0.2851851851851852" />
+        <entry key="app/src/main/res/drawable/selector.xml" value="0.2851851851851852" />
         <entry key="app/src/main/res/layout/activity_about_us.xml" value="0.3541666666666667" />
+        <entry key="app/src/main/res/layout/activity_admin_about.xml" value="0.23703703703703705" />
+        <entry key="app/src/main/res/layout/activity_admin_dash_board.xml" value="0.23703703703703705" />
+        <entry key="app/src/main/res/layout/activity_admin_home_new.xml" value="0.23703703703703705" />
         <entry key="app/src/main/res/layout/activity_admin_login.xml" value="0.33425925925925926" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.3541666666666667" />
         <entry key="app/src/main/res/layout/activity_main2.xml" value="0.1" />
@@ -19,12 +26,16 @@
         <entry key="app/src/main/res/layout/activity_toolbar.xml" value="0.3541666666666667" />
         <entry key="app/src/main/res/layout/admin_home.xml" value="0.33425925925925926" />
         <entry key="app/src/main/res/layout/admin_login.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/admin_register.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/admin_nav_about.xml" value="0.23703703703703705" />
+        <entry key="app/src/main/res/layout/admin_nav_dashboard.xml" value="0.23703703703703705" />
+        <entry key="app/src/main/res/layout/admin_nav_home_new.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/admin_register.xml" value="0.25" />
         <entry key="app/src/main/res/layout/admin_send_email.xml" value="0.2942708333333333" />
         <entry key="app/src/main/res/layout/forget_password.xml" value="0.3541666666666667" />
         <entry key="app/src/main/res/layout/forget_password_new.xml" value="0.3541666666666667" />
         <entry key="app/src/main/res/layout/popup.xml" value="0.1" />
         <entry key="app/src/main/res/layout/popup_password.xml" value="0.1" />
+        <entry key="app/src/main/res/menu/menue_navigation.xml" value="0.23703703703703705" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.41333333333333333" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.41333333333333333" />
       </map>

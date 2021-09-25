@@ -9,6 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NavBar">
+        <activity
+            android:name=".admin.admin_nav_HomeNew"
+            android:exported="true" />
+        <activity
+            android:name=".admin.admin_nav_dashboard"
+            android:exported="true" />
+        <activity
+            android:name=".admin.admin_nav_about"
+            android:exported="true" />
         <activity android:name=".Dashboard" />
         <activity android:name=".admin.HomeActivity" />
         <activity android:name=".admin.admin_login" />

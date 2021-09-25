@@ -16,10 +16,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     private Context ctx;
 
+
     public DatabaseHelper(@Nullable Context context) {
         super(context, Constants.DB_NAME, null, Constants.DB_VERSION);
         this.ctx = context;
     }
+
+
 
 
     @Override
