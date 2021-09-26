@@ -9,14 +9,19 @@ import android.widget.Button;
 
 import com.example.navbar.admin.RegisterActivity;
 import com.example.navbar.admin.admin_login;
+import com.example.navbar.customer.customer_login;
+
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    //initialize variables
-//    DrawerLayout drawerLayout;
-    Button button,adminloginbtn;
+public class MainActivity extends AppCompatActivity{
+
+
+
+
+    Button button,adminloginbtn,customerloginbtn;
 
 
 
@@ -26,12 +31,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         button = findViewById(R.id.dashboard);
-        adminloginbtn=findViewById(R.id.adminlogin_btn);
+        adminloginbtn = findViewById(R.id.adminlogin_btn);
+        customerloginbtn = findViewById(R.id.customerlogin_btn);
+
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,Dashboard.class);
+                Intent intent = new Intent(MainActivity.this, Dashboard.class);
                 startActivity(intent);
             }
         });
@@ -43,7 +50,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        customerloginbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, customer_login.class);
+                startActivity(intent);
+            }
+        });
 
+    };
+}
 
 
 
@@ -128,3 +144,4 @@ public class MainActivity extends AppCompatActivity {
 
 
 }
+

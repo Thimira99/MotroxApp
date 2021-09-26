@@ -52,6 +52,7 @@ public class RegisterActivity extends AppCompatActivity {
                 String password = editTextPassword.getText().toString().trim();
                 String passwordConf = editTextCnfPassword.getText().toString().trim();
 
+
                 if (password.equals(passwordConf)) {
                     user.setUserName(userName);
                     user.setEmail(email);

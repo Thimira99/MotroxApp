@@ -17,12 +17,46 @@
             android:name=".OrderList"
             android:exported="true" />
         <activity
-            android:name=".order"
+            android:name=".admin.Recoveryc1"
+            android:exported="true" />
+        <activity
+            android:name=".admin.UpdateActicityBenze"
+            android:exported="true" />
+        <activity
+            android:name=".admin.benze_Add_Activity"
+            android:exported="true" />
+        <activity
+            android:name=".admin.UpdateActivity2"
+            android:exported="true" />
+        <activity
+            android:name=".admin.AddActivity"
+            android:exported="true" />
+        <activity
+            android:name=".admin.others6"
+            android:exported="true" />
+        <activity
+            android:name=".admin.rangerover5"
+            android:exported="true" />
+        <activity
+            android:name=".admin.toyata4"
+            android:exported="true" />
+        <activity
+            android:name=".admin.audi3"
+            android:exported="true" />
+        <activity
+            android:name=".admin.benze2"
+            android:exported="true" />
+        <activity
+            android:name=".admin.bmw1"
+            android:exported="true" />
+        <activity
+            android:name=".admin.Iten_Mask"
+            android:exported="true" />
+        <activity
+            android:name=".admin.admin_nav_HomeNew"
             android:exported="true" />
         <activity android:name=".CalculateMileage" />
         <activity android:name=".UpdateService" />
-        <activity android:name=".UpdateService" />
-        <activity android:name=".Dashboard" />
         <activity android:name=".Dashboard" />
         <activity android:name=".admin.HomeActivity" />
         <activity android:name=".admin.admin_login" />
@@ -30,6 +64,12 @@
         <activity android:name=".admin.forgrt_password" />
         <activity android:name=".admin.send_email" />
         <activity android:name=".admin.forget_password_new" />
+
+        <activity android:name=".customer.customer_login" />
+        <activity android:name=".customer.customer_register" />
+
+
+
         <activity
             android:name=".AddService"
             android:label="Add Service"
@@ -59,7 +99,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".admin.forgrt_password" />
     </application>
 
 </manifest>
