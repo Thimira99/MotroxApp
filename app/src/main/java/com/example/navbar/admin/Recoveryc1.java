@@ -2,33 +2,34 @@ package com.example.navbar.admin;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.navbar.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+public class Recoveryc1 extends AppCompatActivity {
 
-
-
-public class Iten_Mask extends AppCompatActivity implements View.OnClickListener{
-
-    public CardView c1, c2, c3, c4,c5,c6;
-    TextView textViewUserName;
+    EditText fuel,distance;
+    Button button;
+    TextView answer;
+    Context context;
 
     String textViewUsernameString,textViewNameString,textViewEmailString,textViewPasswordString;
     int textViewID;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.admin_iten_mask);
+        setContentView(R.layout.admin_recoveryc1);
+
         final Bundle b = getIntent().getExtras();
 
 
@@ -46,31 +47,6 @@ public class Iten_Mask extends AppCompatActivity implements View.OnClickListener
         Log.d("Data", "Email: " + textViewEmailString);
         Log.d("Data", "password: " + textViewPasswordString);
 
-
-
-
-        textViewUserName = findViewById(R.id.textViewUserName);
-
-        textViewUserName.setText(""  +textViewUsernameString+"," +"\nSelect the vehical type?");
-
-
-
-
-
-
-
-        c1 = ((CardView) findViewById(R.id.bmwc1));
-        c2 = ((CardView) findViewById(R.id.benzec2));
-        c3 = ((CardView) findViewById(R.id.audic3));
-        c4 = ((CardView) findViewById(R.id.toyotac4));
-        c5 = ((CardView) findViewById(R.id.rangroverc5));
-        c6 = ((CardView) findViewById(R.id.othersc6));
-        c1.setOnClickListener(this);
-        c2.setOnClickListener(this);
-        c3.setOnClickListener(this);
-        c4.setOnClickListener(this);
-        c5.setOnClickListener(this);
-        c6.setOnClickListener(this);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
@@ -124,69 +100,27 @@ public class Iten_Mask extends AppCompatActivity implements View.OnClickListener
             }
         });
 
+        fuel = findViewById(R.id.fuel);
+        distance = findViewById(R.id.distance);
+        button = findViewById(R.id.calculate_mileage_button);
+        answer = findViewById(R.id.answer);
+        context = context;
 
-    }
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int number1 = Integer.parseInt(fuel.getText().toString());
+                int number2 = Integer.parseInt(distance.getText().toString());
+                int number3 = 55;
+                double mileage = (double)number1 * (double) number3;
 
 
+                answer.setText("     Rs   " + String.valueOf(Math.round(mileage * number2)/100.0) + "0 \n     Total per KM");
+            }
+        });
 
-
-    @Override
-    public void onClick(View v) {
-
-        Intent i;
-        switch(v.getId()){
-            case R.id.bmwc1:
-                i = new Intent(this,bmw1.class);
-                Bundle b1 = new Bundle();
-                b1.putString("textViewEmail", textViewEmailString);
-                b1.putString("textViewPassword",  textViewPasswordString);
-                b1.putString("textViewUsername", textViewNameString);
-                b1.putString("textViewId", String.valueOf( textViewID ));
-                i.putExtras(b1);
-
-                startActivity(i);
-                break;
-
-            case R.id.benzec2:
-                i = new Intent(this,benze2.class);
-                Bundle b3 = new Bundle();
-                b3.putString("textViewEmail", textViewEmailString);
-                b3.putString("textViewPassword",  textViewPasswordString);
-                b3.putString("textViewUsername", textViewNameString);
-                b3.putString("textViewId", String.valueOf( textViewID ));
-                i.putExtras(b3);
-
-                startActivity(i);
-                break;
-
-            case R.id.audic3:
-                i = new Intent(this,audi3.class);
-                startActivity(i);
-                break;
-
-            case R.id.toyotac4:
-                i = new Intent(this,toyata4.class);
-                Bundle b = new Bundle();
-                b.putString("textViewEmail", textViewEmailString);
-                b.putString("textViewPassword",  textViewPasswordString);
-                b.putString("textViewUsername", textViewNameString);
-                b.putString("textViewId", String.valueOf( textViewID ));
-                i.putExtras(b);
-
-                startActivity(i);
-                break;
-
-            case R.id.rangroverc5:
-                i = new Intent(this,rangerover5.class);
-                startActivity(i);
-                break;
-
-            case R.id.othersc6:
-                i = new Intent(this,others6.class);
-                startActivity(i);
-                break;
-
-        }
     }
 }
+
+
 

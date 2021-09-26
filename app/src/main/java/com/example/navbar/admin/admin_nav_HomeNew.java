@@ -135,7 +135,15 @@ public class admin_nav_HomeNew extends AppCompatActivity implements View.OnClick
                 break;
 
             case R.id.recovery:
-                i = new Intent(this,Iten_Mask.class);
+                i = new Intent(this,Recoveryc1.class);
+
+                Bundle b4 = new Bundle();
+                b4.putString("textViewEmail", textViewEmailString);
+                b4.putString("textViewPassword",  textViewPasswordString);
+                b4.putString("textViewUsername", textViewNameString);
+                b4.putString("textViewId", String.valueOf( textViewID ));
+                i.putExtras(b4);
+                startActivity(i);
                 startActivity(i);
                 break;
 
