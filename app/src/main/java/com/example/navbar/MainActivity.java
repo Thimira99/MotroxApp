@@ -10,11 +10,15 @@ import android.widget.Button;
 import com.example.navbar.admin.RegisterActivity;
 import com.example.navbar.admin.admin_login;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     //initialize variables
 //    DrawerLayout drawerLayout;
     Button button,adminloginbtn;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +43,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+
+
 
         //assign variable
 //        drawerLayout = findViewById(R.id.drawer_layout);

@@ -4,14 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".order">
-
+    tools:context=".Updata_Order">
 
     <TextView
         android:id="@+id/orderI"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Update Item"
+        android:text="Order Item"
         android:textSize="30dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -34,7 +33,7 @@
         app:srcCompat="@drawable/parts" />
 
     <EditText
-        android:id="@+id/FirstName_Input"
+        android:id="@+id/FirstName_Input2"
         android:layout_width="250dp"
         android:layout_height="45dp"
         android:layout_marginBottom="392dp"
@@ -64,7 +63,7 @@
         app:layout_constraintVertical_bias="0.096" />
 
     <EditText
-        android:id="@+id/City_Input"
+        android:id="@+id/City_Input2"
         android:layout_width="254dp"
         android:layout_height="39dp"
         android:layout_marginBottom="216dp"
@@ -79,7 +78,7 @@
         app:layout_constraintVertical_bias="0.078" />
 
     <EditText
-        android:id="@+id/Email_Input"
+        android:id="@+id/Email_Input2"
         android:layout_width="250dp"
         android:layout_height="43dp"
         android:layout_marginBottom="156dp"
@@ -109,7 +108,7 @@
         app:layout_constraintVertical_bias="0.096" />
 
     <EditText
-        android:id="@+id/StreetAddress_Input"
+        android:id="@+id/StreetAddress_Input2"
         android:layout_width="251dp"
         android:layout_height="40dp"
         android:layout_marginBottom="280dp"
@@ -124,18 +123,18 @@
         app:layout_constraintVertical_bias="0.078" />
 
     <Button
-        android:id="@+id/Confirm_Button"
+        android:id="@+id/Update_Button"
         android:layout_width="148dp"
         android:layout_height="52dp"
+        android:layout_marginEnd="156dp"
+        android:layout_marginRight="156dp"
         android:layout_marginBottom="4dp"
         android:text="Update"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
-        android:id="@+id/LastName_Input"
+        android:id="@+id/LastName_Input2"
         android:layout_width="246dp"
         android:layout_height="39dp"
         android:layout_marginBottom="332dp"
@@ -196,7 +195,7 @@
         app:layout_constraintVertical_bias="0.096" />
 
     <EditText
-        android:id="@+id/NIC_Input"
+        android:id="@+id/NIC_Input2"
         android:layout_width="256dp"
         android:layout_height="39dp"
         android:layout_marginBottom="440dp"
@@ -211,7 +210,7 @@
         app:layout_constraintVertical_bias="0.078" />
 
     <EditText
-        android:id="@+id/PhoneNum_Input"
+        android:id="@+id/PhoneNum_Input2"
         android:layout_width="243dp"
         android:layout_height="41dp"
         android:layout_marginBottom="96dp"
@@ -226,7 +225,7 @@
         app:layout_constraintVertical_bias="0.078" />
 
     <EditText
-        android:id="@+id/Quantity_Input"
+        android:id="@+id/Quantity_Input2"
         android:layout_width="252dp"
         android:layout_height="40dp"
         android:layout_marginBottom="56dp"
@@ -284,6 +283,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:layout_constraintVertical_bias="0.096" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
