@@ -9,18 +9,18 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-
 import com.example.navbar.Data.MyDataBaseAdmin;
+import com.example.navbar.Data.benzeDatabase;
 import com.example.navbar.R;
 
-public class AddActivity extends AppCompatActivity {
+public class benze_Add_Activity extends AppCompatActivity {
 
     EditText title_input, author_input, pages_input;
     Button add_button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.admin_add_acticity);
+        setContentView(R.layout.admin_benze_add);
         title_input = findViewById(R.id.title_input);
         author_input = findViewById(R.id.author_input);
         pages_input = findViewById(R.id.pages_input);
@@ -34,11 +34,11 @@ public class AddActivity extends AppCompatActivity {
         add_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MyDataBaseAdmin myDB = new MyDataBaseAdmin(AddActivity.this);
+                benzeDatabase myDB = new benzeDatabase(benze_Add_Activity.this);
                 myDB.addItem(title_input.getText().toString().trim(),
                         author_input.getText().toString().trim(),
                         Integer.valueOf(pages_input.getText().toString().trim()));
-                startActivity(new Intent(AddActivity.this, bmw1.class));
+                startActivity(new Intent(benze_Add_Activity.this, benze2.class));
             }
         });
     }

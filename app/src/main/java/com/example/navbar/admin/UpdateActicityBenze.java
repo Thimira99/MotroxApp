@@ -1,15 +1,11 @@
 package com.example.navbar.admin;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
-import android.os.Bundle;
-
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -18,9 +14,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.navbar.Data.MyDataBaseAdmin;
+import com.example.navbar.Data.benzeDatabase;
 import com.example.navbar.R;
 
-public class UpdateActivity2 extends AppCompatActivity {
+public class UpdateActicityBenze extends AppCompatActivity {
 
     EditText item_input, description_input, prize_input;
     Button update_button, delete_button;
@@ -30,8 +27,7 @@ public class UpdateActivity2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.admin_bmw_update2);
-
+        setContentView(R.layout.admin_update_acticity_benze);
         item_input = findViewById(R.id.title_input2);
         description_input = findViewById(R.id.author_input2);
         prize_input = findViewById(R.id.pages_input2);
@@ -51,12 +47,12 @@ public class UpdateActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //And only then we call this
-                MyDataBaseAdmin myDB = new MyDataBaseAdmin(UpdateActivity2.this);
+                benzeDatabase myDB = new benzeDatabase(UpdateActicityBenze.this);
                 itemname = item_input.getText().toString().trim();
                 itemdetails = description_input.getText().toString().trim();
                 prize = prize_input.getText().toString().trim();
                 myDB.updateData(itemid, itemname, itemdetails, prize);
-                startActivity(new Intent(UpdateActivity2.this, bmw1.class));
+                startActivity(new Intent(UpdateActicityBenze.this, benze2.class));
             }
         });
         delete_button.setOnClickListener(new View.OnClickListener() {
@@ -94,7 +90,7 @@ public class UpdateActivity2 extends AppCompatActivity {
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                MyDataBaseAdmin myDB = new MyDataBaseAdmin(UpdateActivity2.this);
+               benzeDatabase myDB = new  benzeDatabase(UpdateActicityBenze.this);
                 myDB.deleteOneRow(itemid);
                 finish();
             }

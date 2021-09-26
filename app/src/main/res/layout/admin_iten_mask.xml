@@ -54,7 +54,7 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/bmwc1"
-            android:layout_width="wrap_content"
+            android:layout_width="66dp"
             android:layout_height="wrap_content"
             android:layout_row="0"
             android:layout_rowWeight="1"
@@ -71,6 +71,11 @@
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:gravity="center"
                 android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="133dp"
+                    android:layout_height="78dp"
+                    android:src="@drawable/c1bmw" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -102,10 +107,12 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
+
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                     />
+                    android:layout_width="133dp"
+                    android:layout_height="78dp"
+                    android:src="@drawable/c2benze"
+                    />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -138,10 +145,10 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                     />
-
+                    android:layout_width="133dp"
+                    android:layout_height="78dp"
+                    android:src="@drawable/c3audi"
+                    />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -173,15 +180,16 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                     />
+                    android:layout_width="133dp"
+                    android:layout_height="78dp"
+                    android:src="@drawable/c7nissan"
+                    />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="TOYOTA"
+                    android:text="NISSAN"
                     android:textAlignment="center"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -209,15 +217,16 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="133dp"
+                    android:layout_height="78dp"
+                    android:src="@drawable/c4mini"
                     />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="GIP"
+                    android:text="MINI"
                     android:textAlignment="center"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -244,15 +253,15 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="133dp"
+                    android:layout_height="78dp"
+                    android:src="@drawable/c8jeep"
                     />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="OTHERS"
+                    android:text="JEEP"
                     android:textAlignment="center"
                     android:textStyle="bold" />
 

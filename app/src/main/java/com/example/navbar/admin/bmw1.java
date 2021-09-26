@@ -1,6 +1,7 @@
 package com.example.navbar.admin;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -10,6 +11,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -26,6 +28,14 @@ import java.util.ArrayList;
 
 public class bmw1 extends AppCompatActivity {
 
+
+    TextView textViewUserName;
+
+    String textViewUsernameString,textViewNameString,textViewEmailString,textViewPasswordString;
+    int textViewID;
+
+
+
     RecyclerView recyclerView;
     FloatingActionButton add_button;
     ImageView empty_imageview;
@@ -39,6 +49,36 @@ public class bmw1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.admin_vehical_bmw1);
+
+
+        ActionBar ab = getSupportActionBar();
+        if (ab != null) {
+            ab.setTitle("BMW VEHICAL PARTS");
+        }
+
+
+
+        final Bundle b = getIntent().getExtras();
+
+
+
+        textViewID = Integer.parseInt(b.getString("textViewId"));
+        textViewUsernameString = b.getString("textViewUsername");
+        textViewNameString = b.getString("textViewUsername");
+        textViewEmailString = b.getString("textViewEmail");
+        textViewPasswordString = b.getString("textViewPassword");
+
+
+        Log.d("Data", String.valueOf(textViewID));
+        Log.d("Data", "User name: " + textViewUsernameString);
+        Log.d("Data", "name: " + textViewNameString);
+        Log.d("Data", "Email: " + textViewEmailString);
+        Log.d("Data", "password: " + textViewPasswordString);
+
+
+
+
+
         recyclerView = findViewById(R.id.recyclerView);
         add_button = findViewById(R.id.add_button);
         empty_imageview = findViewById(R.id.empty_imageview);
@@ -103,6 +143,17 @@ public class bmw1 extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId() == R.id.delete_all){
             confirmDialog();
+        }else if(item.getItemId() == R.id.logout){
+            Intent i;
+            i = new Intent(this,Iten_Mask.class);
+            Bundle b = new Bundle();
+            b.putString("textViewEmail", textViewEmailString);
+            b.putString("textViewPassword",  textViewPasswordString);
+            b.putString("textViewUsername", textViewNameString);
+            b.putString("textViewId", String.valueOf( textViewID ));
+            i.putExtras(b);
+
+            startActivity(i);
         }
         return super.onOptionsItemSelected(item);
     }

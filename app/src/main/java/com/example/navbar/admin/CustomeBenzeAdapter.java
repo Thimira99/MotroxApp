@@ -15,20 +15,18 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.navbar.R;
 
 import java.util.ArrayList;
 
-public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> {
-
+public class CustomeBenzeAdapter extends RecyclerView.Adapter<CustomeBenzeAdapter.MyViewHolder>{
     private Context context;
     private Activity activity;
     private ArrayList itemid, itemNmae, itemDetails, itemPrize;
 
-    CustomAdapter(Activity activity, Context context, ArrayList itemid, ArrayList itemNmae, ArrayList itemDetails,
+    CustomeBenzeAdapter(Activity activity, Context context, ArrayList itemid, ArrayList itemNmae, ArrayList itemDetails,
                   ArrayList itemPrize){
         this.activity = activity;
         this.context = context;
@@ -40,15 +38,15 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public CustomeBenzeAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.my_row, parent, false);
-        return new MyViewHolder(view);
+        return new CustomeBenzeAdapter.MyViewHolder(view);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
-    public void onBindViewHolder(@NonNull final MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
+    public void onBindViewHolder(@NonNull final CustomeBenzeAdapter.MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.itemId.setText(String.valueOf(itemid.get(position)+"."));
         holder.itemName.setText(String.valueOf(itemNmae.get(position)));
         holder.itemDescription.setText(String.valueOf(itemDetails.get(position)));
@@ -57,7 +55,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         holder.mainLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, UpdateActivity2.class);
+                Intent intent = new Intent(context, UpdateActicityBenze.class);
                 intent.putExtra("id", String.valueOf(itemid.get(position)));
                 intent.putExtra("title", String.valueOf(itemNmae.get(position)));
                 intent.putExtra("author", String.valueOf(itemDetails.get(position)));

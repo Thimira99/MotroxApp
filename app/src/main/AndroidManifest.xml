@@ -11,6 +11,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NavBar">
         <activity
+            android:name=".admin.Recoveryc1"
+            android:exported="true" />
+        <activity
+            android:name=".admin.UpdateActicityBenze"
+            android:exported="true" />
+        <activity
+            android:name=".admin.benze_Add_Activity"
+            android:exported="true" />
+        <activity
             android:name=".admin.UpdateActivity2"
             android:exported="true" />
         <activity
@@ -40,16 +49,8 @@
         <activity
             android:name=".admin.admin_nav_HomeNew"
             android:exported="true" />
-        <activity
-            android:name=".admin.admin_nav_dashboard"
-            android:exported="true" />
-        <activity
-            android:name=".admin.admin_nav_about"
-            android:exported="true" />
         <activity android:name=".CalculateMileage" />
         <activity android:name=".UpdateService" />
-        <activity android:name=".UpdateService" />
-        <activity android:name=".Dashboard" />
         <activity android:name=".Dashboard" />
         <activity android:name=".admin.HomeActivity" />
         <activity android:name=".admin.admin_login" />
@@ -92,7 +93,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".admin.forgrt_password" />
     </application>
 
 </manifest>
