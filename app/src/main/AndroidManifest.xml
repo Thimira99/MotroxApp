@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.navbar">
 
     <application
@@ -9,21 +10,57 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NavBar">
-
-        <activity android:name=".UpdateService"></activity>
+        <activity
+            android:name=".admin.UpdateActivity2"
+            android:exported="true" />
+        <activity
+            android:name=".admin.AddActivity"
+            android:exported="true" />
+        <activity
+            android:name=".admin.others6"
+            android:exported="true" />
+        <activity
+            android:name=".admin.rangerover5"
+            android:exported="true" />
+        <activity
+            android:name=".admin.toyata4"
+            android:exported="true" />
+        <activity
+            android:name=".admin.audi3"
+            android:exported="true" />
+        <activity
+            android:name=".admin.benze2"
+            android:exported="true" />
+        <activity
+            android:name=".admin.bmw1"
+            android:exported="true" />
+        <activity
+            android:name=".admin.Iten_Mask"
+            android:exported="true" />
+        <activity
+            android:name=".admin.admin_nav_HomeNew"
+            android:exported="true" />
+        <activity
+            android:name=".admin.admin_nav_dashboard"
+            android:exported="true" />
+        <activity
+            android:name=".admin.admin_nav_about"
+            android:exported="true" />
+        <activity android:name=".CalculateMileage" />
+        <activity android:name=".UpdateService" />
+        <activity android:name=".UpdateService" />
         <activity android:name=".Dashboard" />
-
         <activity android:name=".Dashboard" />
         <activity android:name=".admin.HomeActivity" />
         <activity android:name=".admin.admin_login" />
         <activity android:name=".admin.RegisterActivity" />
-
         <activity android:name=".admin.forgrt_password" />
-
         <activity android:name=".admin.send_email" />
         <activity android:name=".admin.forget_password_new" />
+
         <activity android:name=".customer.customer_login" />
         <activity android:name=".customer.customer_register" />
+
 
 
         <activity

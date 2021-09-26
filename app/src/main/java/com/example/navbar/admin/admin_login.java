@@ -22,6 +22,7 @@ public class admin_login extends AppCompatActivity {
     Button buttonLogin;
     TextView textViewRegister,textforgetpassword;
     DatabaseHelper db;
+   admin_nav_HomeNew dashOBJ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,12 +101,18 @@ public class admin_login extends AppCompatActivity {
 
 
                 if (res == true) {
-                    Intent HomePage = new Intent(admin_login.this, HomeActivity.class);
+                    Intent HomePage = new Intent(admin_login.this, admin_nav_HomeNew.class);
+
+
+
                     Bundle b = new Bundle();
                     b.putString("textViewEmail", editTextEmail.getText().toString());
                     b.putString("textViewPassword", editTextPassword.getText().toString());
 
                     String y = db.selectOneUserSendUserName(email, password);
+
+
+
                     int x = db.selectOneUserSendId(email,password);
                     Log.d("TAG" , "ID =  " + x);
 
