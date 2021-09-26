@@ -22,7 +22,8 @@
 
         <activity android:name=".admin.send_email" />
         <activity android:name=".admin.forget_password_new" />
-
+        <activity android:name=".customer.customer_login" />
+        <activity android:name=".customer.customer_register" />
 
 
         <activity
