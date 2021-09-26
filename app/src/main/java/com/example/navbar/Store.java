@@ -27,7 +27,7 @@ public class Store extends AppCompatActivity {
         order_Button.setOnClickListener(new View.OnClickListener(){
             @Override
             public  void onClick(View view){
-                Intent intent = new Intent(Store.this,order.class);
+                Intent intent = new Intent(Store.this,OrderList.class);
                 startActivity(intent);
             }
         });

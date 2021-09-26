@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/mainLayout"
+    >
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="314dp"
+            android:layout_height="match_parent"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/id_txt"
+                android:layout_width="38dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="16dp"
+                android:text="1"
+                app:layout_constraintEnd_toStartOf="@+id/nic_txt"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/nic_txt"
+                android:layout_width="212dp"
+                android:layout_height="27dp"
+                android:layout_marginTop="4dp"
+                android:text="NIC"
+                android:textSize="24sp"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="79dp" />
+
+            <TextView
+                android:id="@+id/firstName_txt"
+                android:layout_width="212dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="8dp"
+                android:text="FirstName"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="@+id/nic_txt"
+                app:layout_constraintTop_toBottomOf="@+id/nic_txt" />
+
+            <TextView
+                android:id="@+id/lastName_txt"
+                android:layout_width="215dp"
+                android:layout_height="29dp"
+                android:layout_marginTop="4dp"
+                android:text="LastName"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="@+id/firstName_txt"
+                app:layout_constraintTop_toBottomOf="@+id/firstName_txt" />
+
+            <TextView
+                android:id="@+id/streetAddress_txt"
+                android:layout_width="215dp"
+                android:layout_height="28dp"
+                android:layout_marginTop="4dp"
+                android:text="streetAddress"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="@+id/lastName_txt"
+                app:layout_constraintTop_toBottomOf="@+id/lastName_txt" />
+
+            <TextView
+                android:id="@+id/city_txt"
+                android:layout_width="213dp"
+                android:layout_height="33dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="8dp"
+                android:text="City"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="@+id/streetAddress_txt"
+                app:layout_constraintTop_toBottomOf="@+id/streetAddress_txt" />
+
+            <TextView
+                android:id="@+id/email_txt"
+                android:layout_width="210dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="4dp"
+                android:text="Email"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="@+id/city_txt"
+                app:layout_constraintTop_toBottomOf="@+id/city_txt" />
+
+            <TextView
+                android:id="@+id/phoneNum_txt"
+                android:layout_width="210dp"
+                android:layout_height="31dp"
+                android:layout_marginTop="4dp"
+                android:text="Phone Number"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="@+id/email_txt"
+                app:layout_constraintTop_toBottomOf="@+id/email_txt" />
+
+            <TextView
+                android:id="@+id/qty_txt"
+                android:layout_width="74dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="4dp"
+                android:text="qty"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="@+id/phoneNum_txt"
+                app:layout_constraintTop_toBottomOf="@+id/phoneNum_txt" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
