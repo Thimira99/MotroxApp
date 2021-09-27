@@ -55,7 +55,7 @@
         <entry key="app/src/main/res/layout/activity_admin_home_new.xml" value="0.23703703703703705" />
         <entry key="app/src/main/res/layout/activity_admin_login.xml" value="0.33425925925925926" />
         <entry key="app/src/main/res/layout/activity_calculate_mileage.xml" value="0.3541666666666667" />
-        <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.3541666666666667" />
+        <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.3541666666666667" />
         <entry key="app/src/main/res/layout/activity_main2.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_navbar.xml" value="0.3541666666666667" />
@@ -78,7 +78,7 @@
         <entry key="app/src/main/res/layout/admin_nav_about.xml" value="0.23703703703703705" />
         <entry key="app/src/main/res/layout/admin_nav_dashboard.xml" value="0.23703703703703705" />
         <entry key="app/src/main/res/layout/admin_nav_home_new.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/admin_recoveryc1.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/admin_recoveryc1.xml" value="0.33" />
         <entry key="app/src/main/res/layout/admin_register.xml" value="0.25" />
         <entry key="app/src/main/res/layout/admin_send_email.xml" value="0.2942708333333333" />
         <entry key="app/src/main/res/layout/admin_update_acticity_benze.xml" value="0.3802083333333333" />
