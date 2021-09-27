@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,11 +32,18 @@ public class CalculateMileage extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int number1 = Integer.parseInt(fuel.getText().toString());
-                int number2 = Integer.parseInt(distance.getText().toString());
-                double mileage = (double)number2 / (double) number1;
+                if(TextUtils.isEmpty(fuel.getText().toString())){
+                    Toast.makeText(CalculateMileage.this,"Enter Fuel Filled",Toast.LENGTH_SHORT).show();
+                }else if(TextUtils.isEmpty(distance.getText().toString())){
+                    Toast.makeText(CalculateMileage.this,"Enter Distance",Toast.LENGTH_SHORT).show();
+                }else {
+                    int number1 = Integer.parseInt(fuel.getText().toString());
+                    int number2 = Integer.parseInt(distance.getText().toString());
+                    double mileage = (double)number2 / (double) number1;
 
-                answer.setText("Mileage: " + String.valueOf(Math.round(mileage * 100)/100.0) + " Km/Litre");
+                    answer.setText("Mileage: " + String.valueOf(Math.round(mileage * 100)/100.0) + " Km/Litre");
+
+                }
             }
         });
 

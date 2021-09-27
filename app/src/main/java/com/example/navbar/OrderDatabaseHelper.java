@@ -4,6 +4,7 @@ package com.example.navbar;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 //import android.util.Log;
@@ -14,7 +15,7 @@ import androidx.annotation.Nullable;
 public class OrderDatabaseHelper extends SQLiteOpenHelper {
 
     Context context;
-    private static final String DATABASE_NAME= "Store.db";
+    private static final String DATABASE_NAME = "Store.db";
     private static final int DATABASE_VERSION = 2;
     private static final String TABLE_NAME = "OrderTable";
 
@@ -29,7 +30,7 @@ public class OrderDatabaseHelper extends SQLiteOpenHelper {
     private static final String COLUMN_QUANTITY = "Quantity";
 
 
-    public OrderDatabaseHelper(@Nullable Context context) {
+    OrderDatabaseHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         this.context = context;
     }
@@ -60,7 +61,7 @@ public class OrderDatabaseHelper extends SQLiteOpenHelper {
     }
 
     void addOrder(String nic, String Firstname, String Lastname, String StreetAddress,
-                  String city, String Email, String mobile, String qty){
+                  String city, String Email, String mobile, String qty) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
@@ -74,14 +75,59 @@ public class OrderDatabaseHelper extends SQLiteOpenHelper {
         cv.put(COLUMN_QUANTITY, qty);
 
         long result = db.insert(TABLE_NAME, null, cv);
-        if(result == -1){
+        if (result == -1) {
             Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
-        }
-        else {
+        } else {
             Toast.makeText(context, "Order Successful", Toast.LENGTH_SHORT).show();
         }
+    }
 
+    Cursor readAllData(){
+        String query = "SELECT * FROM " + TABLE_NAME;
+        SQLiteDatabase db = this.getReadableDatabase();
 
+        Cursor cursor = null;
+        if(db != null){
+            cursor = db.rawQuery(query, null);
+        }
+        return cursor;
+    }
+
+    void updateData(String row_id, String nic, String firstName, String lastName, String streetAddress,
+                    String city, String email, String phoneNum, String qty){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(COLUMN_NIC, nic);
+        cv.put(COLUMN_FName, firstName);
+        cv.put(COLUMN_LName, lastName);
+        cv.put(COLUMN_SAddress, streetAddress);
+        cv.put(COLUMN_CITY, city);
+        cv.put(COLUMN_EMAIL, email);
+        cv.put(COLUMN_MOBILE, phoneNum);
+        cv.put(COLUMN_QUANTITY, qty);
+
+        long result = db.update(TABLE_NAME, cv, "_id=?", new String[]{row_id});
+        if(result == -1){
+            Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(context, "Updated Successfully!", Toast.LENGTH_SHORT).show();
+        }
 
     }
+
+    void deleteOneRow(String row_id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        long result = db.delete(TABLE_NAME, "_id=?", new String[]{row_id});
+        if(result == -1){
+            Toast.makeText(context, "Failed to Delete.", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(context, "Successfully Deleted.", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    void deleteAllData(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM " + TABLE_NAME);
+    }
+
 }
