@@ -17,7 +17,9 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <include layout="@layout/activity_toolbar" />
+        <include
+            layout="@layout/activity_toolbar"
+            android:layout_height="82dp" />
 
         <Button
             android:id="@+id/order_Button"
@@ -26,12 +28,6 @@
             android:layout_marginLeft="70dp"
             android:layout_marginTop="100dp"
             android:text="Order" />
-
-        <Button
-            android:id="@+id/addCartButton"
-            android:layout_width="162dp"
-            android:layout_height="wrap_content"
-            android:text="Add to Cart" />
 
     </LinearLayout>
 </ScrollView>

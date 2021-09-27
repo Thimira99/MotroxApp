@@ -1,5 +1,6 @@
 package com.example.navbar;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -48,10 +49,18 @@ public class OrderList extends AppCompatActivity {
 
         storeDataInArrays();
 
-        customAdapter = new CustomAdapter(OrderList.this, id,nic,firstName,lastName,
+        customAdapter = new CustomAdapter(OrderList.this,OrderList.this, id,nic,firstName,lastName,
                 streetAddress,city,email,phoneNum,qty);
         recyclerView.setAdapter(customAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(OrderList.this));
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable @org.jetbrains.annotations.NotNull Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == 1){
+            recreate();
+        }
     }
 
     void storeDataInArrays(){
