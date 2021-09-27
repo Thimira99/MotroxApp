@@ -44,7 +44,7 @@
             <TextView
                 android:layout_width="290sp"
                 android:layout_height="wrap_content"
-                android:text="Running low on cash and the vehicle mileage is less than 15,000km customer can go for safety service"
+                android:text="Running low on cash and the vehicle mileage is less than 9300mi customer can go for safety service"
                 android:paddingTop="35dp"
                 android:paddingLeft="18dp"
                 android:textSize="18dp"
@@ -75,7 +75,7 @@
             <TextView
                 android:layout_width="290sp"
                 android:layout_height="wrap_content"
-                android:text="Will cost a little bit more than safety service and mileage should be 30,000km"
+                android:text="Will cost a little bit more than safety service and mileage should be 18600mi"
                 android:paddingTop="35dp"
                 android:paddingLeft="18dp"
                 android:textSize="18dp"
@@ -106,7 +106,7 @@
             <TextView
                 android:layout_width="290sp"
                 android:layout_height="wrap_content"
-                android:text="Even better than the major service and cost also little bit higher than the major service and mileage should be 45,000km"
+                android:text="Even better than the major service and cost also little bit higher than the major service and mileage should be 279600mi"
                 android:paddingTop="33dp"
                 android:paddingLeft="18dp"
                 android:textSize="18dp"
@@ -137,7 +137,7 @@
             <TextView
                 android:layout_width="290sp"
                 android:layout_height="wrap_content"
-                android:text="Even better than the premium service and cost also little bit higher than the premium service and mileage should be at least 60,000km"
+                android:text="Little bit higher than the premium service and mileage should be at least 37200mi"
                 android:paddingTop="35dp"
                 android:paddingLeft="18dp"
                 android:textSize="18dp"

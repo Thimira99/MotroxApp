@@ -21,29 +21,80 @@
         <entry key="..\:/Users/Asus/Desktop/applic/MotroxApp/app/src/main/res/layout/my_row.xml" value="0.18125" />
         <entry key="..\:/Users/Asus/Desktop/applic/MotroxApp/app/src/main/res/layout/order_row.xml" value="0.2" />
         <entry key="..\:/Users/Asus/Desktop/applic/MotroxApp/app/src/main/res/layout/service_raw.xml" value="0.25416666666666665" />
+
         <entry key="..\:/Users/Asus/Desktop/applic/MotroxApp/app/src/main/res/layout/update_order.xml" value="0.2751937984496124" />
+
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.31614583333333335" />
+
         <entry key="app/src/main/res/drawable/bg.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/button.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/edit_text_bottom.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/edit_text_top.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/home.xml" value="0.3638888888888889" />
+        <entry key="app/src/main/res/drawable/ic_about.xml" value="0.3703125" />
+        <entry key="app/src/main/res/drawable/ic_aboutus.xml" value="0.3703125" />
+        <entry key="app/src/main/res/drawable/ic_add.xml" value="0.31614583333333335" />
+        <entry key="app/src/main/res/drawable/ic_dashboard.xml" value="0.3703125" />
+        <entry key="app/src/main/res/drawable/ic_delete.xml" value="0.31614583333333335" />
+        <entry key="app/src/main/res/drawable/ic_empty.xml" value="0.31614583333333335" />
+        <entry key="app/src/main/res/drawable/ic_home.xml" value="0.2851851851851852" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.3703125" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background2.xml" value="0.31614583333333335" />
+        <entry key="app/src/main/res/drawable/ic_menu.xml" value="0.3703125" />
+        <entry key="app/src/main/res/drawable/ic_nofile.xml" value="0.3703125" />
+        <entry key="app/src/main/res/drawable/ic_people.xml" value="0.3703125" />
+        <entry key="app/src/main/res/drawable/ic_rateus.xml" value="0.3703125" />
+        <entry key="app/src/main/res/drawable/ic_service.xml" value="0.3703125" />
+        <entry key="app/src/main/res/drawable/ic_store.xml" value="0.3703125" />
+        <entry key="app/src/main/res/drawable/menue_navigation.xml" value="0.2851851851851852" />
+        <entry key="app/src/main/res/drawable/selector.xml" value="0.2851851851851852" />
         <entry key="app/src/main/res/layout/activity_about_us.xml" value="0.3541666666666667" />
+        <entry key="app/src/main/res/layout/activity_add_service.xml" value="0.3541666666666667" />
+        <entry key="app/src/main/res/layout/activity_admin_about.xml" value="0.23703703703703705" />
+        <entry key="app/src/main/res/layout/activity_admin_dash_board.xml" value="0.23703703703703705" />
+        <entry key="app/src/main/res/layout/activity_admin_home_new.xml" value="0.23703703703703705" />
         <entry key="app/src/main/res/layout/activity_admin_login.xml" value="0.33425925925925926" />
+        <entry key="app/src/main/res/layout/activity_calculate_mileage.xml" value="0.3541666666666667" />
+        <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.3541666666666667" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.3541666666666667" />
         <entry key="app/src/main/res/layout/activity_main2.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_navbar.xml" value="0.3541666666666667" />
+        <entry key="app/src/main/res/layout/activity_order.xml" value="0.3541666666666667" />
         <entry key="app/src/main/res/layout/activity_profile.xml" value="0.3541666666666667" />
         <entry key="app/src/main/res/layout/activity_rate_us.xml" value="0.3541666666666667" />
         <entry key="app/src/main/res/layout/activity_service.xml" value="0.3541666666666667" />
+        <entry key="app/src/main/res/layout/activity_service_list.xml" value="0.3541666666666667" />
         <entry key="app/src/main/res/layout/activity_store.xml" value="0.3541666666666667" />
         <entry key="app/src/main/res/layout/activity_toolbar.xml" value="0.3541666666666667" />
+        <entry key="app/src/main/res/layout/activity_update_service.xml" value="0.3541666666666667" />
+        <entry key="app/src/main/res/layout/admin_add_acticity.xml" value="0.2859375" />
+        <entry key="app/src/main/res/layout/admin_benze_add.xml" value="0.3802083333333333" />
+        <entry key="app/src/main/res/layout/admin_bmw__update.xml" value="0.3385416666666667" />
+        <entry key="app/src/main/res/layout/admin_bmw_update.xml" value="0.32447916666666665" />
+        <entry key="app/src/main/res/layout/admin_bmw_update2.xml" value="0.3385416666666667" />
         <entry key="app/src/main/res/layout/admin_home.xml" value="0.33425925925925926" />
+        <entry key="app/src/main/res/layout/admin_iten_mask.xml" value="0.25" />
         <entry key="app/src/main/res/layout/admin_login.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/admin_register.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/admin_nav_about.xml" value="0.23703703703703705" />
+        <entry key="app/src/main/res/layout/admin_nav_dashboard.xml" value="0.23703703703703705" />
+        <entry key="app/src/main/res/layout/admin_nav_home_new.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/admin_recoveryc1.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/admin_register.xml" value="0.25" />
         <entry key="app/src/main/res/layout/admin_send_email.xml" value="0.2942708333333333" />
+        <entry key="app/src/main/res/layout/admin_update_acticity_benze.xml" value="0.3802083333333333" />
+        <entry key="app/src/main/res/layout/admin_vehical_audi3.xml" value="0.3541666666666667" />
+        <entry key="app/src/main/res/layout/admin_vehical_benze2.xml" value="0.3541666666666667" />
+        <entry key="app/src/main/res/layout/admin_vehical_bmw1.xml" value="0.3" />
         <entry key="app/src/main/res/layout/forget_password.xml" value="0.3541666666666667" />
         <entry key="app/src/main/res/layout/forget_password_new.xml" value="0.3541666666666667" />
-        <entry key="app/src/main/res/layout/popup.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/popup_password.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/my_row.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/popup.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/popup_benze.xml" value="0.3645833333333333" />
+        <entry key="app/src/main/res/layout/popup_benze_password.xml" value="0.3645833333333333" />
+        <entry key="app/src/main/res/layout/popup_password.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/service_raw.xml" value="0.3541666666666667" />
+        <entry key="app/src/main/res/menu/menue_navigation.xml" value="0.23703703703703705" />
+        <entry key="app/src/main/res/menu/my_menu.xml" value="0.3385416666666667" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.41333333333333333" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.41333333333333333" />
       </map>

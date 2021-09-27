@@ -5,8 +5,11 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 public class Profile extends AppCompatActivity {
+
+
 
     //initialize variable
     DrawerLayout drawerLayout;
