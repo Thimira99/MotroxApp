@@ -15,7 +15,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.navbar.R;
@@ -81,10 +80,10 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
         MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            itemId = itemView.findViewById(R.id.book_id_txt);
+            itemId = itemView.findViewById(R.id.f2);
             itemName = itemView.findViewById(R.id.book_title_txt);
             itemDescription = itemView.findViewById(R.id.book_author_txt);
-            itemPrize = itemView.findViewById(R.id.book_pages_txt);
+            itemPrize = itemView.findViewById(R.id.price2);
             mainLayout = itemView.findViewById(R.id.mainLayout);
             //Animate Recyclerview
             Animation translate_anim = AnimationUtils.loadAnimation(context, R.anim.translate_anim);

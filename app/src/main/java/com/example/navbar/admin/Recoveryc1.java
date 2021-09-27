@@ -1,6 +1,7 @@
 package com.example.navbar.admin;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -12,16 +13,18 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.navbar.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Recoveryc1 extends AppCompatActivity {
 
-    EditText fuel,distance;
+    EditText fuel,distance,vehicalamount;
     Button button;
-    TextView answer;
+    TextView answer,lowproce,highprice;
     Context context;
+    double prisevehical;
 
     String textViewUsernameString,textViewNameString,textViewEmailString,textViewPasswordString;
     int textViewID;
@@ -30,10 +33,13 @@ public class Recoveryc1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.admin_recoveryc1);
 
+        ActionBar ab = getSupportActionBar();
+        if (ab != null) {
+            ab.setTitle("Cost For a Dolly and Trailer");
+        }
+
+
         final Bundle b = getIntent().getExtras();
-
-
-
         textViewID = Integer.parseInt(b.getString("textViewId"));
         textViewUsernameString = b.getString("textViewUsername");
         textViewNameString = b.getString("textViewUsername");
@@ -59,12 +65,12 @@ public class Recoveryc1 extends AppCompatActivity {
                 Intent i;
                 switch (item.getItemId()) {
                     case R.id.dashbaord:
-                        i = (new Intent(getApplicationContext() , Iten_Mask.class));
+                        i = (new Intent(getApplicationContext(), Iten_Mask.class));
                         Bundle b3 = new Bundle();
                         b3.putString("textViewEmail", textViewEmailString);
-                        b3.putString("textViewPassword",  textViewPasswordString);
+                        b3.putString("textViewPassword", textViewPasswordString);
                         b3.putString("textViewUsername", textViewNameString);
-                        b3.putString("textViewId", String.valueOf( textViewID ));
+                        b3.putString("textViewId", String.valueOf(textViewID));
                         i.putExtras(b3);
 
                         startActivity(i);
@@ -72,12 +78,12 @@ public class Recoveryc1 extends AppCompatActivity {
 
                         return true;
                     case R.id.home:
-                        i = (new Intent(getApplicationContext() , admin_nav_HomeNew.class));
+                        i = (new Intent(getApplicationContext(), admin_nav_HomeNew.class));
                         Bundle b2 = new Bundle();
                         b2.putString("textViewEmail", textViewEmailString);
-                        b2.putString("textViewPassword",  textViewPasswordString);
+                        b2.putString("textViewPassword", textViewPasswordString);
                         b2.putString("textViewUsername", textViewNameString);
-                        b2.putString("textViewId", String.valueOf( textViewID ));
+                        b2.putString("textViewId", String.valueOf(textViewID));
                         i.putExtras(b2);
 
                         startActivity(i);
@@ -85,12 +91,12 @@ public class Recoveryc1 extends AppCompatActivity {
 
                         return true;
                     case R.id.about:
-                        i = (new Intent(getApplicationContext() , admin_nav_about.class));
+                        i = (new Intent(getApplicationContext(), admin_nav_about.class));
                         Bundle b = new Bundle();
                         b.putString("textViewEmail", textViewEmailString);
-                        b.putString("textViewPassword",  textViewPasswordString);
+                        b.putString("textViewPassword", textViewPasswordString);
                         b.putString("textViewUsername", textViewNameString);
-                        b.putString("textViewId", String.valueOf( textViewID ));
+                        b.putString("textViewId", String.valueOf(textViewID));
                         i.putExtras(b);
 
                         startActivity(i);
@@ -99,25 +105,54 @@ public class Recoveryc1 extends AppCompatActivity {
                 return false;
             }
         });
-
+//calculation part
+        vehicalamount = findViewById(R.id.vehicalprize);
+        lowproce = findViewById(R.id.Lowprice);
+        highprice = findViewById(R.id.Highprice);
         fuel = findViewById(R.id.fuel);
         distance = findViewById(R.id.distance);
         button = findViewById(R.id.calculate_mileage_button);
         answer = findViewById(R.id.answer);
         context = context;
 
-        button.setOnClickListener(new View.OnClickListener() {
+
+        lowproce.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int number1 = Integer.parseInt(fuel.getText().toString());
-                int number2 = Integer.parseInt(distance.getText().toString());
-                int number3 = 55;
-                double mileage = (double)number1 * (double) number3;
-
-
-                answer.setText("     Rs   " + String.valueOf(Math.round(mileage * number2)/100.0) + "0 \n     Total per KM");
+                String lowprize = "Rs 366.00";
+                vehicalamount.setText(lowprize);
+                prisevehical = 366;
             }
         });
+
+        highprice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String highprize = "Rs 732.00";
+                vehicalamount.setText(highprize);
+                prisevehical = 732;
+            }
+        });
+
+
+
+
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    if (prisevehical != 0) {
+                    double number1 = Integer.parseInt(fuel.getText().toString());
+                    double number2 = Integer.parseInt(distance.getText().toString());
+
+
+                    answer.setText("     Rs " + String.valueOf(Math.round(number1 * prisevehical * number2) / 100.0) + "0");
+                    }else{
+                        Toast.makeText(Recoveryc1.this, "Select Vehical Type", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+
 
     }
 }
