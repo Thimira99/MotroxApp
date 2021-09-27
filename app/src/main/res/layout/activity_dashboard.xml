@@ -17,11 +17,27 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:text="Dashboard"
-            android:textSize="50sp"
+            android:textSize="30sp"
             android:textStyle="bold"
-            android:gravity="center"/>
+            android:paddingLeft="130dp"/>
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/bmwlogo"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="150dp"
+            />
+
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="111dp"
+            android:src="@drawable/mercedeslogo"
+            android:layout_marginLeft="140dp"/>
+
 
     </LinearLayout>
 
