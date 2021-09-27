@@ -30,7 +30,7 @@ public class OrderDatabaseHelper extends SQLiteOpenHelper {
     private static final String COLUMN_QUANTITY = "Quantity";
 
 
-    public OrderDatabaseHelper(@Nullable Context context) {
+    OrderDatabaseHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         this.context = context;
     }

@@ -18,7 +18,8 @@ public class MainActivity extends AppCompatActivity {
 //    DrawerLayout drawerLayout;
     Button button,adminloginbtn;
 
-
+    OrderDatabaseHelper myDB;
+    ArrayList<String>id,nic,firstName,lastName,streetAddress,city,email,mobile,qty;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +45,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        myDB = new OrderDatabaseHelper(MainActivity.this);
+        id = new ArrayList<>();
+        nic = new ArrayList<>();
+        firstName = new ArrayList<>();
+        lastName = new ArrayList<>();
+        streetAddress = new ArrayList<>();
+        city = new ArrayList<>();
+        mobile = new ArrayList<>();
+        qty = new ArrayList<>();
 
 
 

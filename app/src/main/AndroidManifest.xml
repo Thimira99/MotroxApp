@@ -11,8 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NavBar" >
         <activity
-            android:name=".Updata_Order"
-            android:exported="true" />
+            android:name=".Update_Order"
+            android:exported="true"
+            android:parentActivityName=".OrderList"/>
         <activity
             android:name=".OrderList"
             android:exported="true" />
