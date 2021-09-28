@@ -1,78 +1,124 @@
 package com.example.navbar;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.example.navbar.Data.MyDataBaseAdmin;
+import com.example.navbar.admin.AddActivity;
+import com.example.navbar.admin.CustomAdapter;
+import com.example.navbar.admin.Iten_Mask;
+import com.example.navbar.admin.bmw1;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.util.ArrayList;
 
 public class Store extends AppCompatActivity {
 
+    TextView textViewUserName;
+
+    String textViewUsernameString,textViewNameString,textViewEmailString,textViewPasswordString;
+    int textViewID;
+
+
+
     RecyclerView recyclerView;
-    Button order_Button;
+    FloatingActionButton add_button;
+    ImageView empty_imageview;
+    TextView no_data;
 
-
-    DrawerLayout drawerLayout;
+    MyDataBaseAdmin myDB;
+    ArrayList<String> itemid, itemNmae, itemDetails, itemPrize;
+    CustomItemAdapter customAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store);
 
+
+        ActionBar ab = getSupportActionBar();
+        if (ab != null) {
+            ab.setTitle("ALL VEHICLE PARTS");
+        }
+
+
         recyclerView = findViewById(R.id.recyclerView);
-        order_Button = findViewById(R.id.order_Button);
-        order_Button.setOnClickListener(new View.OnClickListener(){
+        add_button = findViewById(R.id.add_button);
+        empty_imageview = findViewById(R.id.empty_imageview);
+        no_data = findViewById(R.id.no_data);
+
+        add_button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public  void onClick(View view){
-                Intent intent = new Intent(Store.this,OrderList.class);
+            public void onClick(View view) {
+                Intent intent = new Intent(Store.this, AddActivity.class);
                 startActivity(intent);
             }
         });
 
+        myDB = new MyDataBaseAdmin(Store.this);
+        itemid = new ArrayList<>();
+        itemNmae = new ArrayList<>();
+        itemDetails = new ArrayList<>();
+        itemPrize = new ArrayList<>();
 
-        drawerLayout = findViewById(R.id.drawer_layout);
-    }
+        storeDataInArrays();
 
-    public void ClickMenu(View view){
-        //open drawer
-        Dashboard.openDrawer(drawerLayout);
-    }
+        customAdapter = new CustomItemAdapter(Store.this,this, itemid, itemNmae, itemDetails,
+                itemPrize);
+        recyclerView.setAdapter(customAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(Store.this));
 
-    public void ClickLogo(View view){
-        //close drawer
-        Dashboard.closeDrawer(drawerLayout);
-    }
-
-    public void ClickProfile(View view){
-        Dashboard.redirectActivity(this,Profile.class);
-    }
-
-    public void ClickDashboard(View view){
-        Dashboard.redirectActivity(this,Dashboard.class);
-    }
-
-    public void ClickStore(View view){
-        recreate();
-    }
-
-    public void ClickService(View view){
-        Dashboard.redirectActivity(this,Service.class);
-    }
-
-    public void ClickAboutUs(View view){
-        Dashboard.redirectActivity(this,AboutUs.class);
-    }
-
-    public void ClickRateUs(View view){
-        Dashboard.redirectActivity(this,RateUs.class);
     }
 
     @Override
-    protected void onPause() {
-        super.onPause();
-        Dashboard.closeDrawer(drawerLayout);
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == 1){
+            recreate();
+        }
     }
+
+    void storeDataInArrays(){
+        Cursor cursor = myDB.readAllData();
+        if(cursor.getCount() == 0){
+            empty_imageview.setVisibility(View.VISIBLE);
+            no_data.setVisibility(View.VISIBLE);
+        }else{
+            while (cursor.moveToNext()){
+                itemid.add(cursor.getString(0));
+                itemNmae.add(cursor.getString(1));
+                itemDetails.add(cursor.getString(2));
+                itemPrize.add(cursor.getString(3));
+            }
+            empty_imageview.setVisibility(View.GONE);
+            no_data.setVisibility(View.GONE);
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.my_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
 }
+

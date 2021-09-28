@@ -16,8 +16,6 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-public class MainActivity extends AppCompatActivity{
-
 
 
 
@@ -60,15 +58,6 @@ public class MainActivity extends AppCompatActivity{
         });
 
 
-        myDB = new OrderDatabaseHelper(MainActivity.this);
-        id = new ArrayList<>();
-        nic = new ArrayList<>();
-        firstName = new ArrayList<>();
-        lastName = new ArrayList<>();
-        streetAddress = new ArrayList<>();
-        city = new ArrayList<>();
-        mobile = new ArrayList<>();
-        qty = new ArrayList<>();
     };
 }
 
@@ -78,7 +67,7 @@ public class MainActivity extends AppCompatActivity{
 
         //assign variable
 //        drawerLayout = findViewById(R.id.drawer_layout);
-    }
+
 
 //    public void ClickMenu(View view){
 //        //open drawer
@@ -155,5 +144,5 @@ public class MainActivity extends AppCompatActivity{
 //    }
 
 
-}
+
 

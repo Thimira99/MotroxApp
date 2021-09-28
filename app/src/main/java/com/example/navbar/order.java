@@ -7,28 +7,36 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.navbar.admin.RegisterActivity;
+import com.example.navbar.admin.admin_login;
 
 import java.text.BreakIterator;
 import java.time.format.DateTimeFormatterBuilder;
 
 public class order extends AppCompatActivity {
 
-    EditText NIC_Input, FirstName_Input, LastName_Input, StreetAddress_Input, City_Input,
+    EditText NUC_Input, FirstName_Input, LastName_Input, StreetAddress_Input, City_Input,
             Email_Input, PhoneNum_Input, Quantity_Input;
     Button Confirm_Button, View_Button;
 
     String nic, firstname, lastname, streetAddress, city, email, phoneNum, quantity;
+    String itemid, itemname, itemdetails, prize;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
 
-        NIC_Input = findViewById(R.id.NIC_Input);
+
+
+
+        NUC_Input = findViewById(R.id.NIC_Input);
         FirstName_Input = findViewById(R.id.FirstName_Input);
         LastName_Input = findViewById(R.id.LastName_Input);
         StreetAddress_Input = findViewById(R.id.StreetAddress_Input);
@@ -37,11 +45,13 @@ public class order extends AppCompatActivity {
         PhoneNum_Input = findViewById(R.id.PhoneNum_Input);
         Quantity_Input = findViewById(R.id.Quantity_Input);
         Confirm_Button = findViewById(R.id.Confirm_Button);
+        getAndSetIntentData();
+
         Confirm_Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                nic = NIC_Input.getText().toString().trim();
+                nic = NUC_Input.getText().toString().trim();
                 firstname = FirstName_Input.getText().toString().trim();
                 lastname = LastName_Input.getText().toString().trim();
                 streetAddress = StreetAddress_Input.getText().toString().trim();
@@ -59,4 +69,22 @@ public class order extends AppCompatActivity {
 
 
     }
-}
+    void getAndSetIntentData(){
+        if(getIntent().hasExtra("id") && getIntent().hasExtra("title") &&
+                getIntent().hasExtra("author") && getIntent().hasExtra("pages")){
+            //Getting Data from Intent
+            itemid = getIntent().getStringExtra("id");
+            itemname = getIntent().getStringExtra("title");
+            itemdetails = getIntent().getStringExtra("author");
+            prize = getIntent().getStringExtra("pages");
+            //Setting Intent Data
+            NUC_Input.setText(itemid);
+            FirstName_Input.setText(itemname);
+            Log.d("stev", itemname+" "+itemdetails+" "+prize);
+            startActivity(new Intent(order.this, order.class));
+        }else{
+            Toast.makeText(this, "No data.", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    }
