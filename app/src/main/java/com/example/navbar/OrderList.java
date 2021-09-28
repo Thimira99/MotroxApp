@@ -22,38 +22,6 @@ public class OrderList extends AppCompatActivity {
     ArrayList<String> id,nic,firstName,lastName,streetAddress,city,email,phoneNum,qty;
     CustomAdapter customAdapter;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_order_list);
-
-        recyclerView = findViewById(R.id.recyclerView);
-        placeOrder_button = findViewById(R.id.placeOrder_button);
-        placeOrder_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(OrderList.this,order.class);
-                startActivity(intent);
-            }
-        });
-        myDB = new OrderDatabaseHelper(OrderList.this);
-        id = new ArrayList<>();
-        nic = new ArrayList<>();
-        firstName = new ArrayList<>();
-        lastName = new ArrayList<>();
-        streetAddress = new ArrayList<>();
-        city = new ArrayList<>();
-        email = new ArrayList<>();
-        phoneNum = new ArrayList<>();
-        qty = new ArrayList<>();
-
-        storeDataInArrays();
-
-        customAdapter = new CustomAdapter(OrderList.this,OrderList.this, id,nic,firstName,lastName,
-                streetAddress,city,email,phoneNum,qty);
-        recyclerView.setAdapter(customAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(OrderList.this));
-    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable @org.jetbrains.annotations.NotNull Intent data) {

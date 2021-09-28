@@ -69,7 +69,8 @@
         <activity android:name=".customer.customer_login" />
         <activity android:name=".customer.customer_register" />
 
-
+        <activity android:name=".order"
+            android:exported="true" />
 
         <activity
             android:name=".AddService"
