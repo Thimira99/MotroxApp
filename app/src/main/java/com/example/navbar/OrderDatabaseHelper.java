@@ -4,6 +4,7 @@ package com.example.navbar;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -11,6 +12,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+
+import com.example.navbar.admin.admin_login;
+import com.example.navbar.admin.forget_password_new;
 
 public class OrderDatabaseHelper extends SQLiteOpenHelper {
 
@@ -111,6 +115,7 @@ public class OrderDatabaseHelper extends SQLiteOpenHelper {
             Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
         }else {
             Toast.makeText(context, "Updated Successfully!", Toast.LENGTH_SHORT).show();
+
         }
 
     }

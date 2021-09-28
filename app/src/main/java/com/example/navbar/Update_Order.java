@@ -5,11 +5,17 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.navbar.admin.UpdateActivity2;
+import com.example.navbar.admin.admin_login;
+import com.example.navbar.admin.bmw1;
+import com.example.navbar.admin.forget_password_new;
 
 public class Update_Order extends AppCompatActivity {
 
@@ -54,6 +60,7 @@ public class Update_Order extends AppCompatActivity {
                 phoneNum = PhoneNum_Input.getText().toString().trim();
                 qty = Quantity_Input.getText().toString().trim();
                 myDB.updateData(id, nic, firstName, lastName, streetAddress, city, email, phoneNum, qty);
+                startActivity(new Intent(Update_Order.this, OrderList.class));
 
             }
        });
