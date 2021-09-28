@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 public class Update_Order extends AppCompatActivity {
 
+    //initialize datas
     EditText NIC_Input, FirstName_Input, LastName_Input, StreetAddress_Input, City_Input, Email_Input, PhoneNum_Input, Quantity_Input;
     Button Update_Button,Delete_Button;
 
@@ -23,6 +24,7 @@ public class Update_Order extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.update_order);
 
+        //assingning values
         NIC_Input = findViewById(R.id.NIC_Input2);
         FirstName_Input = findViewById(R.id.FirstName_Input2);
         LastName_Input = findViewById(R.id.LastName_Input2);
@@ -34,6 +36,7 @@ public class Update_Order extends AppCompatActivity {
         Update_Button = findViewById(R.id.Update_Button);
         Delete_Button = findViewById(R.id.Delete_Button);
 
+        //call getAndset method
         getAndSetIntentData();
 
         ActionBar ab = getSupportActionBar();

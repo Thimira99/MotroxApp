@@ -21,6 +21,7 @@ import java.time.format.DateTimeFormatterBuilder;
 
 public class order extends AppCompatActivity {
 
+    //initialize
     EditText NUC_Input, FirstName_Input, LastName_Input, StreetAddress_Input, City_Input,
             Email_Input, PhoneNum_Input, Quantity_Input;
     Button Confirm_Button, View_Button;
@@ -34,7 +35,7 @@ public class order extends AppCompatActivity {
         setContentView(R.layout.activity_order);
 
 
-
+        //assign variables to initialized data
 
         NUC_Input = findViewById(R.id.NIC_Input);
         FirstName_Input = findViewById(R.id.FirstName_Input);

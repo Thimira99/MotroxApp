@@ -60,6 +60,7 @@ public class OrderDatabaseHelper extends SQLiteOpenHelper {
 
     }
 
+    //
     void addOrder(String nic, String Firstname, String Lastname, String StreetAddress,
                   String city, String Email, String mobile, String qty) {
         SQLiteDatabase db = this.getWritableDatabase();
