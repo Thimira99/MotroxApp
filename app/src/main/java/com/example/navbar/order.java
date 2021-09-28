@@ -21,7 +21,7 @@ import java.time.format.DateTimeFormatterBuilder;
 
 public class order extends AppCompatActivity {
 
-    EditText NUC_Input, FirstName_Input, LastName_Input, StreetAddress_Input, City_Input,
+    EditText NUC_Input1, FirstName_Input1, LastName_Input, StreetAddress_Input, City_Input,
             Email_Input, PhoneNum_Input, Quantity_Input;
     Button Confirm_Button, View_Button;
 
@@ -36,8 +36,8 @@ public class order extends AppCompatActivity {
 
 
 
-        NUC_Input = findViewById(R.id.NIC_Input);
-        FirstName_Input = findViewById(R.id.FirstName_Input);
+        NUC_Input1 = findViewById(R.id.NIC_Input);
+        FirstName_Input1 = findViewById(R.id.FirstName_Input);
         LastName_Input = findViewById(R.id.LastName_Input);
         StreetAddress_Input = findViewById(R.id.StreetAddress_Input);
         City_Input = findViewById(R.id.City_Input);
@@ -51,8 +51,8 @@ public class order extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                nic = NUC_Input.getText().toString().trim();
-                firstname = FirstName_Input.getText().toString().trim();
+                nic = NUC_Input1.getText().toString().trim();
+                firstname = FirstName_Input1.getText().toString().trim();
                 lastname = LastName_Input.getText().toString().trim();
                 streetAddress = StreetAddress_Input.getText().toString().trim();
                 city = City_Input.getText().toString().trim();
@@ -63,7 +63,7 @@ public class order extends AppCompatActivity {
                 OrderDatabaseHelper storeDB = new OrderDatabaseHelper(order.this);
                 storeDB.addOrder(nic, firstname, lastname, streetAddress, city, email, phoneNum, quantity);
 
-
+                startActivity(new Intent(order.this, OrderList.class));
             }
         });
 
@@ -78,10 +78,10 @@ public class order extends AppCompatActivity {
             itemdetails = getIntent().getStringExtra("author");
             prize = getIntent().getStringExtra("pages");
             //Setting Intent Data
-            NUC_Input.setText(itemid);
-            FirstName_Input.setText(itemname);
+            NUC_Input1.setText(itemid);
+            FirstName_Input1.setText(itemname);
             Log.d("stev", itemname+" "+itemdetails+" "+prize);
-            startActivity(new Intent(order.this, order.class));
+
         }else{
             Toast.makeText(this, "No data.", Toast.LENGTH_SHORT).show();
         }
