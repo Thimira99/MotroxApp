@@ -1,4 +1,6 @@
-package com.example.navbar.admin;
+package com.example.navbar;
+
+
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -18,16 +20,17 @@ import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.navbar.R;
+import com.example.navbar.admin.UpdateActivity2;
 
 import java.util.ArrayList;
 
-public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> {
+public class CustomItemAdapter extends RecyclerView.Adapter<CustomItemAdapter.MyViewHolder> {
 
     private Context context;
     private Activity activity;
     private ArrayList itemid, itemNmae, itemDetails, itemPrize;
 
-    public CustomAdapter(Activity activity, Context context, ArrayList itemid, ArrayList itemNmae, ArrayList itemDetails,
+    public CustomItemAdapter(Activity activity, Context context, ArrayList itemid, ArrayList itemNmae, ArrayList itemDetails,
                          ArrayList itemPrize){
         this.activity = activity;
         this.context = context;
@@ -39,7 +42,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MyViewHolder  onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.my_row, parent, false);
         return new MyViewHolder(view);
@@ -56,7 +59,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         holder.mainLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, UpdateActivity2.class);
+                Intent intent = new Intent(context, order.class);
                 intent.putExtra("id", String.valueOf(itemid.get(position)));
                 intent.putExtra("title", String.valueOf(itemNmae.get(position)));
                 intent.putExtra("author", String.valueOf(itemDetails.get(position)));
@@ -64,6 +67,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
                 activity.startActivityForResult(intent, 1);
             }
         });
+
+
     }
 
     @Override
@@ -91,4 +96,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     }
 
 }
+
+
 
