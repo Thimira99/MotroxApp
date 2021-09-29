@@ -14,8 +14,13 @@ import com.example.navbar.customer.customer_login;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
 
+
+public class MainActivity extends AppCompatActivity{
+
+
+
+    Button adminloginbtn,customerloginbtn;
 
 
 
@@ -29,6 +34,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
+        adminloginbtn = findViewById(R.id.adminlogin_btn);
+        customerloginbtn = findViewById(R.id.customerlogin_btn);
+
+
+
         button = findViewById(R.id.dashboard);
         adminloginbtn = findViewById(R.id.adminlogin_btn);
         customerloginbtn = findViewById(R.id.customerlogin_btn);
@@ -41,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
 
         adminloginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,6 +77,11 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
+
+    };
+}
 
         //assign variable
 //        drawerLayout = findViewById(R.id.drawer_layout);
