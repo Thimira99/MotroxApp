@@ -17,13 +17,10 @@ public class customerDatabaseHelper extends SQLiteOpenHelper {
     private Context con;
 
 
-
     public customerDatabaseHelper(@Nullable Context context) {
         super(context, uti_customer.DB_NAME, null, uti_customer.DB_VERSION);
         this.con = context;
     }
-
-
 
 
     @Override
@@ -41,6 +38,7 @@ public class customerDatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS" + uti_customer.TABLE_NAME);
+        onCreate(db);
 
     }
 
@@ -49,7 +47,7 @@ public class customerDatabaseHelper extends SQLiteOpenHelper {
 
         SQLiteDatabase db = getReadableDatabase();
 
-        String selection = uti_customer.KEY_CUSEMAIL + "=?" ;
+        String selection = uti_customer.KEY_CUSEMAIL + "=?";
 
         String[] selectionArgs = {customerEmail};
 
@@ -67,16 +65,16 @@ public class customerDatabaseHelper extends SQLiteOpenHelper {
     public String forgetselectOneCusSendCusName(String customerEmail) {
         SQLiteDatabase db = getReadableDatabase();
 
-        Cursor c = db.rawQuery("SELECT * FROM " + uti_customer.TABLE_NAME + " WHERE " + uti_customer.KEY_CUSEMAIL + " = '"+customerEmail.trim()+"'", null);
+        Cursor c = db.rawQuery("SELECT * FROM " + uti_customer.TABLE_NAME + " WHERE " + uti_customer.KEY_CUSEMAIL + " = '" + customerEmail.trim() + "'", null);
         c.moveToFirst();
 
-        int x = 0 ;
+        int x = 0;
         String y = "";
         while (c != null) {
             x = Integer.parseInt(c.getString(c.getColumnIndex(uti_customer.KEY_ID)));
             y = c.getString(c.getColumnIndex(uti_customer.KEY_PASSWORD));
-            Log.d("tagOneUser", Integer.toString(x) );
-            Log.d("tagOneUser", y );
+            Log.d("tagOneUser", Integer.toString(x));
+            Log.d("tagOneUser", y);
             break;
         }
         c.moveToNext();
@@ -86,16 +84,16 @@ public class customerDatabaseHelper extends SQLiteOpenHelper {
     public int forgetselectOneCusSendId(String customerEmail) {
         SQLiteDatabase db = getReadableDatabase();
 
-        Cursor c = db.rawQuery("SELECT * FROM " + uti_customer.TABLE_NAME+ " WHERE " + uti_customer.KEY_CUSEMAIL + " = '"+customerEmail.trim()+"'" , null);
+        Cursor c = db.rawQuery("SELECT * FROM " + uti_customer.TABLE_NAME + " WHERE " + uti_customer.KEY_CUSEMAIL + " = '" + customerEmail.trim() + "'", null);
         c.moveToFirst();
 
-        int x = 0 ;
+        int x = 0;
         String y = "";
         while (c != null) {
             x = Integer.parseInt(c.getString(c.getColumnIndex(uti_customer.KEY_ID)));
             y = c.getString(c.getColumnIndex(uti_customer.KEY_PASSWORD));
-            Log.d("tagOneUser", Integer.toString(x) );
-            Log.d("tagOneUser", y );
+            Log.d("tagOneUser", Integer.toString(x));
+            Log.d("tagOneUser", y);
             break;
         }
         c.moveToNext();
@@ -121,16 +119,16 @@ public class customerDatabaseHelper extends SQLiteOpenHelper {
     public String selectOneCusSendCusName(String customerEmail, String customerPassword) {
         SQLiteDatabase db = getReadableDatabase();
 
-        Cursor c = db.rawQuery("SELECT * FROM " + uti_customer.TABLE_NAME+ " WHERE " + uti_customer.KEY_CUSEMAIL + " = '"+customerEmail.trim()+"'" +" and "+ uti_customer.KEY_PASSWORD + " = '"+customerPassword.trim()+"'" , null);
+        Cursor c = db.rawQuery("SELECT * FROM " + uti_customer.TABLE_NAME + " WHERE " + uti_customer.KEY_CUSEMAIL + " = '" + customerEmail.trim() + "'" + " and " + uti_customer.KEY_PASSWORD + " = '" + customerPassword.trim() + "'", null);
         c.moveToFirst();
 
-        int x = 0 ;
+        int x = 0;
         String y = "";
         while (c != null) {
             x = Integer.parseInt(c.getString(c.getColumnIndex(uti_customer.KEY_ID)));
             y = c.getString(c.getColumnIndex(uti_customer.KEY_CUSNAME));
-            Log.d("tagOneUser", Integer.toString(x) );
-            Log.d("tagOneUser", y );
+            Log.d("tagOneUser", Integer.toString(x));
+            Log.d("tagOneUser", y);
             break;
         }
         c.moveToNext();
@@ -163,7 +161,6 @@ public class customerDatabaseHelper extends SQLiteOpenHelper {
         values.put(uti_customer.KEY_PASSWORD, cus.getCustomerPassword());
         values.put(uti_customer.KEY_CUSEMAIL, cus.getCustomerEmail());
 
-        // Error
         long res = db.insert(uti_customer.TABLE_NAME, null, values);
         Log.d("Saved!", "saved to DB");
         db.close();
@@ -178,4 +175,15 @@ public class customerDatabaseHelper extends SQLiteOpenHelper {
         return cursor.getCount();
     }
 
+    public int updateCustomer(customer customer) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(uti_customer.KEY_CUSNAME, customer.getCustomerName());
+        values.put(uti_customer.KEY_PASSWORD, customer.getCustomerPassword());
+        values.put(uti_customer.KEY_CUSEMAIL, customer.getCustomerEmail());
+        return db.update(uti_customer.TABLE_NAME, values, uti_customer.KEY_ID + "=?",
+                new String[]{String.valueOf(customer.getId())});
+
+
+    }
 }

@@ -15,25 +15,19 @@ public class MainActivity extends AppCompatActivity{
 
 
 
-    Button button,adminloginbtn,customerloginbtn;
+    Button adminloginbtn,customerloginbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        button = findViewById(R.id.dashboard);
+
         adminloginbtn = findViewById(R.id.adminlogin_btn);
         customerloginbtn = findViewById(R.id.customerlogin_btn);
 
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Dashboard.class);
-                startActivity(intent);
-            }
-        });
+
 
         adminloginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,7 +53,7 @@ public class MainActivity extends AppCompatActivity{
 
         //assign variable
 //        drawerLayout = findViewById(R.id.drawer_layout);
-    }
+
 
 //    public void ClickMenu(View view){
 //        //open drawer
@@ -136,5 +130,5 @@ public class MainActivity extends AppCompatActivity{
 //    }
 
 
-}
+
 
