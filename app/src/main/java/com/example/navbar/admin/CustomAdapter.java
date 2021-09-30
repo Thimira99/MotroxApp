@@ -1,5 +1,6 @@
 package com.example.navbar.admin;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -14,7 +15,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.navbar.R;
@@ -27,8 +27,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     private Activity activity;
     private ArrayList itemid, itemNmae, itemDetails, itemPrize;
 
-    CustomAdapter(Activity activity, Context context, ArrayList itemid, ArrayList itemNmae, ArrayList itemDetails,
-                  ArrayList itemPrize){
+    public CustomAdapter(Activity activity, Context context, ArrayList itemid, ArrayList itemNmae, ArrayList itemDetails,
+                         ArrayList itemPrize){
         this.activity = activity;
         this.context = context;
         this.itemid = itemid;
@@ -47,11 +47,11 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
-    public void onBindViewHolder(@NonNull final MyViewHolder holder,  int position) {
-        holder.itemId.setText(String.valueOf(itemid.get(position)));
+    public void onBindViewHolder(@NonNull final MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
+        holder.itemId.setText(String.valueOf(itemid.get(position)+"."));
         holder.itemName.setText(String.valueOf(itemNmae.get(position)));
         holder.itemDescription.setText(String.valueOf(itemDetails.get(position)));
-        holder.itemPrize.setText(String.valueOf(itemPrize.get(position)));
+        holder.itemPrize.setText("Rs : "+String.valueOf(itemPrize.get(position)+".00"));
         //Recyclerview onClickListener
         holder.mainLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,8 +64,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
                 activity.startActivityForResult(intent, 1);
             }
         });
-
-
     }
 
     @Override
@@ -80,10 +78,10 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
         MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            itemId = itemView.findViewById(R.id.book_id_txt);
+            itemId = itemView.findViewById(R.id.f2);
             itemName = itemView.findViewById(R.id.book_title_txt);
             itemDescription = itemView.findViewById(R.id.book_author_txt);
-            itemPrize = itemView.findViewById(R.id.book_pages_txt);
+            itemPrize = itemView.findViewById(R.id.price2);
             mainLayout = itemView.findViewById(R.id.mainLayout);
             //Animate Recyclerview
             Animation translate_anim = AnimationUtils.loadAnimation(context, R.anim.translate_anim);

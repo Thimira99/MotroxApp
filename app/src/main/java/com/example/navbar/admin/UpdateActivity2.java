@@ -44,7 +44,7 @@ public class UpdateActivity2 extends AppCompatActivity {
         //Set actionbar title after getAndSetIntentData method
         ActionBar ab = getSupportActionBar();
         if (ab != null) {
-            ab.setTitle(itemname);
+            ab.setTitle("Update "+itemname);
         }
 
         update_button.setOnClickListener(new View.OnClickListener() {

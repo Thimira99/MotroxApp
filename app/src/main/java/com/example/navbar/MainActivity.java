@@ -11,11 +11,18 @@ import com.example.navbar.admin.RegisterActivity;
 import com.example.navbar.admin.admin_login;
 import com.example.navbar.customer.customer_login;
 
-public class MainActivity extends AppCompatActivity{
+
+import java.util.ArrayList;
+
+public class MainActivity extends AppCompatActivity {
+
 
 
 
     Button adminloginbtn,customerloginbtn;
+
+    OrderDatabaseHelper myDB;
+    ArrayList<String>id,nic,firstName,lastName,streetAddress,city,email,mobile,qty;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +43,6 @@ public class MainActivity extends AppCompatActivity{
                 startActivity(intent);
             }
         });
-
-
         customerloginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,8 +51,11 @@ public class MainActivity extends AppCompatActivity{
             }
         });
 
+
     };
 }
+
+
 
 
 

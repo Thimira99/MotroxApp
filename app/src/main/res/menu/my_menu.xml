@@ -6,6 +6,13 @@
         android:id="@+id/delete_all"
         android:title="Delete All"
         android:icon="@drawable/ic_delete"
-        app:showAsAction="never"/>
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/logout"
+        android:title="back"
+        android:icon="@drawable/ic_delete"
+        app:showAsAction="never"
+        />
 
 </menu>

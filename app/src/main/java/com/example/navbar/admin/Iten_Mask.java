@@ -83,6 +83,16 @@ public class Iten_Mask extends AppCompatActivity implements View.OnClickListener
                 Intent i;
                 switch (item.getItemId()) {
                     case R.id.dashbaord:
+                        i = (new Intent(getApplicationContext() , Iten_Mask.class));
+                        Bundle b3 = new Bundle();
+                        b3.putString("textViewEmail", textViewEmailString);
+                        b3.putString("textViewPassword",  textViewPasswordString);
+                        b3.putString("textViewUsername", textViewNameString);
+                        b3.putString("textViewId", String.valueOf( textViewID ));
+                        i.putExtras(b3);
+
+                        startActivity(i);
+                        overridePendingTransition(0, 0);
 
                         return true;
                     case R.id.home:
@@ -127,11 +137,25 @@ public class Iten_Mask extends AppCompatActivity implements View.OnClickListener
         switch(v.getId()){
             case R.id.bmwc1:
                 i = new Intent(this,bmw1.class);
+                Bundle b1 = new Bundle();
+                b1.putString("textViewEmail", textViewEmailString);
+                b1.putString("textViewPassword",  textViewPasswordString);
+                b1.putString("textViewUsername", textViewNameString);
+                b1.putString("textViewId", String.valueOf( textViewID ));
+                i.putExtras(b1);
+
                 startActivity(i);
                 break;
 
             case R.id.benzec2:
                 i = new Intent(this,benze2.class);
+                Bundle b3 = new Bundle();
+                b3.putString("textViewEmail", textViewEmailString);
+                b3.putString("textViewPassword",  textViewPasswordString);
+                b3.putString("textViewUsername", textViewNameString);
+                b3.putString("textViewId", String.valueOf( textViewID ));
+                i.putExtras(b3);
+
                 startActivity(i);
                 break;
 

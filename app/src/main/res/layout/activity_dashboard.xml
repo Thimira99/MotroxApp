@@ -6,12 +6,10 @@
     android:layout_height="match_parent"
     android:id="@+id/drawer_layout"
     tools:context=".Dashboard">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
         <include
             layout="@layout/activity_toolbar"/>
 
@@ -55,17 +53,27 @@
             android:text="Motorox Automobiles was founded as a one man operation in an earth floor shed. Sanjaya, a mechanic himself, did most of the work initially, gradually adding employees to complete various tasks. Over the few years the earth floor was replaced with concrete and the shed grew up the yard. It now covers an area of approximately 7000 sq feet. Motorox provides enthusiasts with quality repair services and is the true one stop shop for repairing and servicing of all vehicles. Motorox currently employs Thirty full time and contract staff. Over the few years innumerable vehicles have had major work carried out or have had minor repairs and regular servicing. Motorox is equipped to deal with the full restoration of any motor vehicle." />
 
 
-    </LinearLayout>
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="262dp"
+            android:layout_gravity="center"
+            android:layout_height="100dp"
+            app:srcCompat="@drawable/motrox" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+
+    </LinearLayout>
     <RelativeLayout
         android:layout_width="300dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:background="@android:color/white">
 
-
         <include
             layout="@layout/activity_navbar"/>
     </RelativeLayout>
-
 </androidx.drawerlayout.widget.DrawerLayout>

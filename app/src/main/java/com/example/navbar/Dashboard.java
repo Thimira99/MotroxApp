@@ -1,14 +1,13 @@
 package com.example.navbar;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+
 
 import com.example.navbar.customer.customer_login;
 
@@ -19,12 +18,17 @@ public class Dashboard extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
 
+import com.example.navbar.customer.customer_login;
+public class Dashboard extends AppCompatActivity {
+
+
+    DrawerLayout drawerLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
-
         drawerLayout = findViewById(R.id.drawer_layout);
+
 
 
         final Bundle b = getIntent().getExtras();
@@ -39,21 +43,22 @@ public class Dashboard extends AppCompatActivity {
 
     }
 
+
+        final Bundle b = getIntent().getExtras();
+
+    }
     public void ClickMenu(View view){
         //open drawer
         openDrawer(drawerLayout);
     }
-
     public static void openDrawer(DrawerLayout drawerLayout) {
         //open drawer layout
         drawerLayout.openDrawer(GravityCompat.START);
     }
-
     public void ClickLogo(){
         //close drawer
         closeDrawer(drawerLayout);
     }
-
     public static void closeDrawer(DrawerLayout drawerLayout) {
         //close drawer layout
         //check conditions
@@ -63,19 +68,16 @@ public class Dashboard extends AppCompatActivity {
             drawerLayout.closeDrawer(GravityCompat.START);
         }
     }
-
     public static void redirectActivity(Activity activity, Class aClass) {
         //initialize intent
         Intent intent = new Intent(activity,aClass);
-
         //set flag
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-
         //start activity
         activity.startActivity(intent);
     }
-
     public void ClickProfile(View view){
+
 
 
 
@@ -104,33 +106,35 @@ public class Dashboard extends AppCompatActivity {
         //Redirect activity
         //redirectActivity(this,Profile.class);
 
-    }
 
+
+        Intent HomePage =new Intent(Dashboard.this, Profile.class);
+        Bundle bu = new Bundle();
+        
+
+        //Redirect activity
+        //redirectActivity(this,Profile.class);
+    }
     public void ClickDashboard(View view){
         //recreate activity
         recreate();
     }
-
     public void ClickStore(View view){
         //Redirect activity
         redirectActivity(this,Store.class);
     }
-
     public void ClickService(View view){
         //Redirect activity
         redirectActivity(this, Service.class);
     }
-
     public void ClickAboutUs(View view){
         //Redirect activity
         redirectActivity(this,AboutUs.class);
     }
-
     public void ClickRateUs(View view){
         //Redirect activity
         redirectActivity(this,RateUs.class);
     }
-
     @Override
     protected void onPause() {
         super.onPause();

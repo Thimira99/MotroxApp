@@ -1,5 +1,6 @@
 package com.example.navbar.admin;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -24,6 +25,12 @@ public class AddActivity extends AppCompatActivity {
         author_input = findViewById(R.id.author_input);
         pages_input = findViewById(R.id.pages_input);
         add_button = findViewById(R.id.add_button);
+
+        ActionBar ab = getSupportActionBar();
+        if (ab != null) {
+            ab.setTitle("Add Item");
+        }
+
         add_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
