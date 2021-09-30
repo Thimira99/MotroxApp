@@ -7,8 +7,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+
+
+import com.example.navbar.customer.customer_login;
+
+public class Dashboard extends AppCompatActivity {
+
+    String s1, s2, s3;
+    int i4;
+
+    DrawerLayout drawerLayout;
+
 import com.example.navbar.customer.customer_login;
 public class Dashboard extends AppCompatActivity {
+
 
     DrawerLayout drawerLayout;
     @Override
@@ -16,6 +28,21 @@ public class Dashboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
         drawerLayout = findViewById(R.id.drawer_layout);
+
+
+
+        final Bundle b = getIntent().getExtras();
+
+
+        i4 = Integer.parseInt(b.getString("textViewCusId"));
+        s1 = b.getString("textViewCustomerName");
+        s2 = b.getString("textViewCusEmail");
+        s3 = b.getString("textViewCusPassword");
+
+
+
+    }
+
 
         final Bundle b = getIntent().getExtras();
 
@@ -50,6 +77,35 @@ public class Dashboard extends AppCompatActivity {
         activity.startActivity(intent);
     }
     public void ClickProfile(View view){
+
+
+
+
+
+        Intent HomePage =new Intent(Dashboard.this, Profile.class);
+        Bundle bu = new Bundle();
+        bu.putString("textViewCusEmail",s2);
+        bu.putString("textViewCusPassword",s3);
+
+
+
+
+        bu.putString("textViewCustomerName",s1);
+        bu.putString("textViewCusId",String.valueOf(i4));
+
+
+
+        HomePage.putExtras(bu);
+        startActivity(HomePage);
+
+
+
+
+
+
+        //Redirect activity
+        //redirectActivity(this,Profile.class);
+
 
 
         Intent HomePage =new Intent(Dashboard.this, Profile.class);

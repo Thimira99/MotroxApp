@@ -9,6 +9,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+
+        android:theme="@style/Theme.NavBar">
+        <activity android:name=".CusCal"></activity>
+        <activity android:name=".cusdelete" />
+
         android:theme="@style/Theme.NavBar" >
         <activity
             android:name=".Update_Order"
@@ -26,6 +31,7 @@
         <activity
             android:name=".admin.benze_Add_Activity"
             android:exported="true" />
+
         <activity
             android:name=".admin.UpdateActivity2"
             android:exported="true" />
@@ -65,9 +71,10 @@
         <activity android:name=".admin.forgrt_password" />
         <activity android:name=".admin.send_email" />
         <activity android:name=".admin.forget_password_new" />
-
         <activity android:name=".customer.customer_login" />
         <activity android:name=".customer.customer_register" />
+
+
 
         <activity android:name=".order"
             android:exported="true" />

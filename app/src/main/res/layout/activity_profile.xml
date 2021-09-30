@@ -22,10 +22,10 @@
             android:id="@+id/textViewLogout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="300dp"
+            android:layout_marginLeft="310dp"
             android:text="Logout"
             android:textColor="#FA0404"
-            android:textSize="26sp"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -101,22 +101,7 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Confirm Password"
-            android:layout_marginBottom="10dp">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/c_con_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_baseline_lock_24"
-                android:drawablePadding="10dp"
-                android:text="nikil123" />
-
-
-        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/profile_button_edit"
@@ -126,7 +111,7 @@
             android:layout_marginTop="10dp"
             android:background="@drawable/button"
             android:foreground="?android:attr/selectableItemBackground"
-            android:text="Update"
+            android:text="Update user name/email"
             android:textAllCaps="false"
             android:textColor="#FFFFFF"
             android:textSize="17sp"
@@ -134,18 +119,46 @@
 
 
         <Button
-            android:id="@+id/customer_buttonSignin"
+            android:id="@+id/password_button_edit"
             android:layout_width="match_parent"
-            android:drawableLeft="@drawable/ic_baseline_delete_24"
+            android:drawableLeft="@drawable/ic_baseline_edit_24"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/button"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:text="Update password"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="17sp"
+            app:backgroundTint="#BF2B31" />
+
+        <Button
+            android:id="@+id/customer_buttonDelete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button"
+            android:drawableLeft="@drawable/ic_baseline_delete_24"
             android:foreground="?android:attr/selectableItemBackground"
             android:text="Delete Account"
             android:textAllCaps="false"
             android:textColor="#FFFFFF"
             android:textSize="17sp"
             app:backgroundTint="#BF2B31" />
+
+
+        <TextView
+            android:id="@+id/textViewCal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="155dp"
+            android:layout_marginTop="10dp"
+            android:text="Calculator"
+            android:textColor="@color/teal_200"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     </LinearLayout>

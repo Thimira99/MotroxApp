@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    Button button,adminloginbtn,customerloginbtn;
+    Button adminloginbtn,customerloginbtn;
 
     OrderDatabaseHelper myDB;
     ArrayList<String>id,nic,firstName,lastName,streetAddress,city,email,mobile,qty;
@@ -29,18 +29,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        button = findViewById(R.id.dashboard);
+
         adminloginbtn = findViewById(R.id.adminlogin_btn);
         customerloginbtn = findViewById(R.id.customerlogin_btn);
 
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Dashboard.class);
-                startActivity(intent);
-            }
-        });
+
 
         adminloginbtn.setOnClickListener(new View.OnClickListener() {
             @Override

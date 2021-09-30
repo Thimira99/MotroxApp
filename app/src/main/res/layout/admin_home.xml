@@ -68,10 +68,10 @@
                     android:id="@+id/textViewName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-
                     android:layout_marginLeft="15dp"
+
                     android:text="name"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 

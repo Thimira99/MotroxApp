@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.navbar.Dashboard;
+import com.example.navbar.Profile;
 import com.example.navbar.R;
 import com.example.navbar.admin.RegisterActivity;
 
@@ -86,17 +87,22 @@ public class customer_login extends AppCompatActivity {
                 Log.d("IDdetail",String.valueOf(customer.getId()));
 
                 if (res == true){
+
                     Intent HomePage =new Intent(customer_login.this, Dashboard.class);
                     Bundle bu = new Bundle();
                     bu.putString("textViewCusEmail", customer_editTextEmail.getText().toString());
                     bu.putString("textViewCusPassword", customer_editTextPassword.getText().toString());
 
+
                     String y = db.selectOneCusSendCusName(customerEmail, customerPassword);
                     int x = db.selectOneCusSendId(customerEmail, customerPassword);
                     Log.d("TAG_D", "CUS_ID = " + x);
 
+
                     bu.putString("textViewCustomerName",y);
                     bu.putString("textViewCusId", String.valueOf(x));
+
+
 
                     HomePage.putExtras(bu);
                     startActivity(HomePage);
